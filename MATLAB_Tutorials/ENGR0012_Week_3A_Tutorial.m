@@ -1,13 +1,21 @@
-%[text] # Week 3A
-%[text] ## Misc: disp, clear, clc, display, path, addpath
-% Random messy codes
+%[text] # Week 3A: MATLAB Basics - Workspace, Arrays, and Operations
+%[text]
+%[text] ## Section 1: Useful Workspace Commands
+%[text] These commands help you organize and manage your MATLAB environment:
+%[text] - disp(): Display values in the command window
+%[text] - clear: Remove variables from memory
+%[text] - clc: Clear the command window
+%[text] - addpath(): Add folders to MATLAB's search path
+
+% Sample variables to work with
 A = 5.145;
 B = [4, 6; 9, 12];
 %%
-% Display to screen
+% Using disp() to display values
 disp(B) %[output:317baa15]
 %%
-% Display more information:
+% You can combine text and numbers using square brackets []
+% This requires converting numbers to strings using num2str()
 disp(['A`s value is: ', num2str(A)]) %[output:12e180c5]
 %%
 % Clear workspace
@@ -28,8 +36,11 @@ addpath("/MATLAB Drive/somefolder/"); %[output:54e36aeb]
 %[text] Or right click the desired file and choose "add to path" on MATLAB desktop
 %%
 %[text] Another useful feature when working in the ***Command Window***, you may use the upper arrow ↑ to quickly retrieve your command history.
-%%
-%[text] ## Linspace and Colon methods
+
+%[text] ## Section 2: Creating Vectors - Linspace and Colon Methods  
+%[text] Linspace and colon operators are useful for creating vectors with evenly-spaced values.
+%[text] This is common when you need to create x-axes for plots or generate test data.
+
 % Create a vector 'v' with 101 linearly spaced points between 0 and 1
 v = linspace(0, 1, 101) %[output:27c5c9b7]
 %[text] The first few elements of `v` would be v = \[0, 0.01, 0.02, 0.03, ..., 0.99, 1\]
@@ -38,180 +49,238 @@ v = linspace(0, 1, 101) %[output:27c5c9b7]
 %%
 % Create a vector 'arr' with 6 linearly spaced points between 5 and 30
 arr = linspace(5, 30, 6);
+%[text] The elements of 'arr' would be: arr = \[5, 10, 15, 20, 25, 30\]
 
-% Example: The elements of 'arr' would be:
-% arr = [5, 10, 15, 20, 25, 30]
 %%
-% Create a vector 'b' starting from 1 to 3 with a step size of 0.2
+% Alternatively, use the colon operator start:step:end to create vectors
+% This is often easier when you know the step size rather than the number of points
 b = 1:0.2:3 %[output:1fa952f1]
+%[text] Syntax: start:step:end creates a vector from start to end with given step size
 %[text] The elements of `b` would be: b = \[1, 1.2, 1.4, 1.6, 1.8, 2, 2.2, 2.4, 2.6, 2.8, 3\]
 %%
-%[text] ## Creating Ones and Zeros Matrices
+%[text] ## Section 3: Creating Special Matrices
+%[text] Often you need to initialize matrices with specific values.
+%[text] MATLAB provides convenient functions like ones(), zeros(), and eye().
+
+% Create square matrices (same number of rows and columns)
 h = ones(3)  % Creates a 3x3 square matrix filled with ones %[output:86bc7a18]
 j = zeros(4) % Creates a 4x4 square matrix filled with zeros %[output:87e92fc5]
 %%
-matOne = ones(2, 3) % Creates a 2x3 matrix filled with ones %[output:09774c4c]
-matZero = zeros(5, 2) % Creates a 5x2 matrix filled with zeros %[output:2d7ea438]
+% You can also specify rows and columns separately
+matOne = ones(2, 3) % Creates a 2x3 matrix filled with ones (2 rows, 3 columns) %[output:09774c4c]
+matZero = zeros(5, 2) % Creates a 5x2 matrix filled with zeros (5 rows, 2 columns) %[output:2d7ea438]
 %%
+% The identity matrix (ones on diagonal, zeros elsewhere) is useful for matrix operations
 i4 = eye(4) % Creates a 4x4 identity matrix %[output:1adb74e4]
 %%
-%[text] ## Get the dimensions of arrays
-%%
-% “size” gives length of all matrix dimension
-% “length” gives the length of largest array dimension
+%[text] ## Section 4: Checking Array Dimensions
+%[text] When working with arrays, you often need to know their size.
+%[text] Use size() for 2D info or length() for the longest dimension.
+
+% size() returns the number of rows and columns
+% length() returns the size of the largest dimension
 
 size(matZero) %[output:6159c0ce]
 length(matZero) %[output:4883ff2a]
 %%
-%[text] ## Access/Modify Individual Elements in Vector/Matrix
-%%
-% Recall i4
+%[text] ## Section 5: Accessing and Modifying Array Elements
+%[text] You often need to read or change specific values in an array.
+%[text] Use matrix indexing (row, column) to access individual elements.
+
+% First, let's display the identity matrix we created earlier
 disp(i4) %[output:17cbf36a]
 %%
-element_23 = i4(2, 3) % Access the element in the 2nd row, 3rd column of matrix 'i4' %[output:7357ba93]
-element_11 = i4(1, 1) % Access the element in the 1st row, 1st column of matrix 'i4' %[output:8b2ce35a]
+% Access elements using (row, column) indexing
+element_23 = i4(2, 3) % Get the element at row 2, column 3 %[output:7357ba93]
+element_11 = i4(1, 1) % Get the element at row 1, column 1 %[output:8b2ce35a]
 %%
-% Recall h
+% Recall the ones matrix 'h' from Section 3
 disp(h) %[output:1a17cbb3]
 %%
-% Modify individual elements in an array
-h(2, 3) = 10; % Set the element in the 2nd row, 3rd column of matrix 'h' to 10
-h(1, 1) = 5;  % Set the element in the 1st row, 1st column of matrix 'h' to 5 
+% To modify a value, assign a new value to its location
+h(2, 3) = 10; % Change element at row 2, column 3 to 10
+h(1, 1) = 5;  % Change element at row 1, column 1 to 5 
 h %[output:94c7a720]
 %%
-%[text] ## Perform Matrix Operations
+%[text] ## Section 6: Matrix Operations
+%[text] MATLAB excels at mathematical operations on matrices.
+%[text] You can operate between matrices and scalars, or between two matrices.
+%[text] Be careful: * and / perform linear algebra operations, while .* and ./ are element-wise.
+
+% Define two 2x2 matrices for examples
 A = [1, 2; 3, 4] %[output:7d189090]
 B = [5, 6; 7, 8] %[output:6edc6012]
 %%
-% Matrix +-*/ scalar
+% Add, subtract, multiply, and divide each matrix element by a scalar
+% These operations apply to all elements uniformly
 A+100, A-99, A*0.01, A/2 %[output:34e01f1f] %[output:65cb7dcf] %[output:92e82156] %[output:28e03f9d]
 %%
-% Scalar +-* matrix
+% Order doesn't matter for + and * with scalars (scalar can be on either side)
 200+A, -20-A, 0.001*A %[output:52600c80] %[output:8481e514] %[output:47ae2048]
 %%
-% Element-wise operations + - .* ./ .^
-C_ele_add = A + B;  % A_i + B_i
-C_ele_sub = A - B;  % A_i - B_i
-C_ele_mul = A .* B; % A_i * B_i
-C_ele_div = A ./ B; % A_i / B_i
-C_ele_pow = A .^ B; % A_i ^ B_i
+% Element-wise operations: apply operation to corresponding elements
+% Use . before the operator for element-wise: .* ./ .^ 
+C_ele_add = A + B;  % Add corresponding elements
+C_ele_sub = A - B;  % Subtract corresponding elements
+C_ele_mul = A .* B; % Multiply corresponding elements (note the dot: .*)
+C_ele_div = A ./ B; % Divide corresponding elements (note the dot: ./)
+C_ele_pow = A .^ B; % Raise corresponding elements to each other's power (note the dot: .^)
 C_ele_add, C_ele_sub, C_ele_mul, C_ele_div, C_ele_pow %[output:9d8aebbf] %[output:40024c17] %[output:235f003c] %[output:24094f36] %[output:7aa91112]
 %%
-%[text] In Element-wise operations:
-%[text] - order matters
-%[text] - A, B matrices have to match size \
+%[text] **Important notes about element-wise operations:**
+%[text] - The order of operations matters (A .* B ≠ B .* A in general)
+%[text] - Both matrices must have the same dimensions
+%[text] - Compare this to matrix multiplication (A * B), which has different dimension requirements
 %%
-% Matrix multiplication
-C_mul = A * B; % same as excel mmult
-C_mul_diff = B * A; % linear algebra says A*B not always equal to B*A
+% Matrix multiplication (linear algebra operation, NOT element-wise)
+C_mul = A * B; % Standard matrix multiplication
+C_mul_diff = B * A; % Note: Matrix multiplication is NOT commutative (A*B ≠ B*A)
 C_mul, C_mul_diff %[output:94cf8880] %[output:2e272420]
-%[text] If A is in dimension `m*n`, B is in dimension `s*t`. n has to be equal to s (`n=s`) so that A\*B is doable
+%[text] **Matrix multiplication rule:** If A has dimensions m×n and B has dimensions s×t,
+%[text] then A*B is only possible if n = s (inner dimensions must match).
 %%
 disp(A) %[output:549a3371]
-A_transpose = A' % or A_transpose = transpose(A) %[output:3c8ab019]
-A_inverse = inv(A) % matrix inverse or A_inverse = A^(-1) %[output:6afeaab7]
 %%
+% Transpose: flip rows and columns
+A_transpose = A' % or A_transpose = transpose(A) - both work %[output:3c8ab019]
+%%
+% Matrix inverse: only works for square non-singular matrices
+A_inverse = inv(A) % or A_inverse = A^(-1) - both work %[output:6afeaab7]
+%%
+% Transpose also works on non-square matrices
 B = [2, 3; 4, 5; 6, 7] %[output:73495e7f]
-B_transpose = B' %[output:52b33bea]
+B_transpose = B' % A 3×2 matrix becomes 2×3 %[output:52b33bea]
 %%
-% Verify yourself
-% A_inverse * A, A * A_inverse
+% Try verifying: Does A_inverse * A give the identity matrix I?
+% Try: A_inverse * A, A * A_inverse
 %%
-%[text] ## Concatenate arrays
+%[text] ## Section 7: Concatenating Arrays
+%[text] Sometimes you need to combine smaller matrices into larger ones.
+%[text] Use vertcat() to stack vertically or horzcat() to stack horizontally.
+
+% Create fresh matrices for concatenation examples
 A = [1, 2; 3, 4] %[output:629c29f8]
 B = [5, 6; 7, 8] %[output:3a03c045]
-C_vertcat = vertcat(A, B) % another way is just C_vertcat = [A;B] %[output:8b2e9b69]
 %%
-% C_vertcat will be:
+% Vertical concatenation: stack matrices on top of each other
+C_vertcat = vertcat(A, B) % Shorthand: [A;B] %[output:8b2e9b69]
+% Result: A is stacked on top of B
 %  1  2
 %  3  4
 %  5  6
 %  7  8
 
+% You can concatenate multiple matrices
 D = [100, 200; 100, 300; 100, 400];
 vertcat(C_vertcat, D) %[output:334a59fd]
 %%
+% The order matters: D on top of C_vertcat
 vertcat(D, C_vertcat) %[output:7c4c3c63]
 %%
+% Reset matrices for horizontal concatenation
 A = [1, 2; 3, 4];
 B = [5, 6; 7, 8];
 
-C_horzcat = horzcat(A, B) % another way is just C_horzcat = [A,B] %[output:77dadd72]
-% C_horzcat will be:
+% Horizontal concatenation: stack matrices side by side
+C_horzcat = horzcat(A, B) % Shorthand: [A,B] %[output:77dadd72]
+% Result: B is placed to the right of A
 %  1  2  5  6
 %  3  4  7  8
 
+%%
+% Another example with different dimensions
 E = [0.1, 0.2, 0.3; 0.4, 0.5, 0.6] %[output:9dcd5449]
 horzcat(C_horzcat, E) %[output:1af33150]
-%[text] Make sure that A and B have compatible dimensions for these operations:
-%[text] - For vertcat, A and B must have the same number of columns.
-%[text] - For horzcat, A and B must have the same number of rows \
+
+%[text] **Important dimension requirements:**
+%[text] - For vertcat: A and B must have the **same number of columns**
+%[text] - For horzcat: A and B must have the **same number of rows**
 %%
-%[text] ## num2str
-%[text] Convert a number to a string
+%[text] ## Section 8: Converting Numbers to Strings (num2str)
+%[text] When you want to display numbers along with text, you need to convert them.
+%[text] num2str() converts a number or matrix into a string format.
+
 num = 12;
-num2str(num) %[output:84e69544]
+num2str(num) % Convert the number 12 to the string '12' %[output:84e69544]
 %%
-disp(['The number as a string is: ', num2str(num)]); % str can be viewed as an array/vector of char %[output:439c55c2]
+% Use num2str() to combine numbers with text
+% Strings can be concatenated using square brackets []
+disp(['The number as a string is: ', num2str(num)]); %[output:439c55c2]
 %%
-%str_vec = ['I', 'enjoy', 'MATLAB'];
+% Concatenating strings works the same way as concatenating matrices
 str_vec = ['I ', 'enjoy ', 'MATLAB '];
 horzcat(str_vec) %[output:6c7a3fc5]
 %%
+% Mixing text and numbers
 str_vec2 = ['from ', 'ENGR', num2str(num)];
 horzcat(str_vec, str_vec2) %[output:235bc8ac]
 %%
-% Convert a matrix to a string
+% You can also convert entire matrices to strings
 matrix = [1.1, 2.2; 3.3, 4.4] %[output:4128c09c]
-matrix_str = num2str(matrix) %fix-width on each row %[output:95f23a34]
+matrix_str = num2str(matrix) % Formats each row with fixed-width spacing %[output:95f23a34]
+%%
 matrix_b = [1, 100, 2.04; 7, 8, -9] %[output:5491725b]
-matrix_b_str = num2str(matrix_b) %fix-width on each row %[output:905afc66]
+matrix_b_str = num2str(matrix_b) % Useful for saving matrices as text %[output:905afc66]
 %%
-%[text] ## Rounding Commands
+%[text] ## Section 9: Rounding Numbers
+%[text] Different rounding functions give different results.
+%[text] Use round() for nearest integer, ceil() for always up, floor() for always down.
+
 num = 3.1415926;
-round(num) %[output:65c0ddfb]
-ceil(num) %[output:6b062886]
-floor(num) %[output:339979de]
-fix(num) %[output:20368a9b]
-fix(-1.49999) %[output:88e6fb3d]
-matrix_r = [0.5001, -0.4999; 1.501, 1.999] %[output:10aa97b7]
-fix(matrix_r) %[output:3aed21ee]
+round(num) % Round to nearest integer %[output:65c0ddfb]
 %%
-%[text] ## Save and Load in MATLAB
+ceil(num)  % Round up (ceiling) %[output:6b062886]
+floor(num) % Round down (floor) %[output:339979de]
+%%
+% fix() truncates toward zero (useful for removing decimal part)
+fix(num) %[output:20368a9b]
+fix(-1.49999) % With negative numbers, fix() rounds toward zero, not toward -infinity %[output:88e6fb3d]
+%%
+% All these functions work on matrices element-wise
+matrix_r = [0.5001, -0.4999; 1.501, 1.999] %[output:10aa97b7]
+fix(matrix_r) % Apply fix to each element %[output:3aed21ee]
+%%
+%[text] ## Section 10: Saving and Loading Data
+%[text] MATLAB can save your variables to files (.mat files) for later use.
+%[text] This is useful for storing results and sharing data.
+
 % Create some sample data
 sample_data = rand(5, 5);
 sample_text = 'Hello, MATLAB!';
 
-% Save the data to a MAT file
-save('sample.mat', 'sample_data', 'sample_text');
+%%
+% Save specific variables to a MAT file
+save('sample.mat', 'sample_data', 'sample_text'); % Save only these variables
+%%
+% Save ALL variables in the workspace
 save('all.mat');
 %%
-% Load the data from the MAT file
-
-clear; % to verify the functionality of load below
-load('sample.mat'); % you can also double-click to load
+% Loading data from a saved file
+clear; % Clear the workspace to show that load() will restore the variables
+load('sample.mat'); % Load the variables back (you can also double-click the .mat file in the file browser)
 %%
-%[text] Suppose you have created a <u>data.txt</u> and put inside
-%[text] 1, 2, 3, 4
-%[text] 5, 6, 7, 8
-%[text] 9, 10, 11, 12
-%[text] 13, 14, 15, 16
-%[text] Suppose you have created a <u>data2.txt</u> and put inside
-%[text] \-1, -2, -3, -4
-%[text] \-5, -6, -7, -8
-%[text] \-9, -10, -11, -12
-%[text] \-13, -14, -15, -16
+%[text] You can also load numerical data from plain text files (.txt files)
+%[text] **Example:** Suppose you have a file data.txt containing:
+%[text]   1, 2, 3, 4
+%[text]   5, 6, 7, 8
+%[text]   9, 10, 11, 12
+%[text]   13, 14, 15, 16
+%[text]
+%[text] You can load it like this:
 data = load('data.txt') %[output:7c583c53]
 %%
-%[text]  Load from user input
-x = input("please input x between 1~4: ");
-y = input("please input y between 1~4: ");
+%[text] ## Section 11: Interactive Input from the User
+%[text] The input() function allows users to enter values while the script is running.
+
+% Get numerical input from the user
+x = input("Please input x between 1~4: ");
+y = input("Please input y between 1~4: ");
 %%
-%[text] Load from user input as a string
-file = input("please input file name to import: ", 's');
+% Get string input from the user (the 's' flag means "string input")
+file = input("Please input file name to import: ", 's');
 result = load(file);
 %%
-% A small interface:
+% Display results using concatenation of strings and numbers
 disp(['The element you inquired at Row ', num2str(x), ' Column ', num2str(y), ' of file ', file, ' is: ', num2str(result(x, y))]) %[output:8f82d77e]
 
 %[appendix]{"version":"1.0"}
