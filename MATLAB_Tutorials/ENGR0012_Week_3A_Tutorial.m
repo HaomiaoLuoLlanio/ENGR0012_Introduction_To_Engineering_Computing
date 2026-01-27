@@ -16,7 +16,7 @@ clear;
 % Clear command window
 clc;
 %%
-%[text] Display all MATLAB search path for scripts. It will be a lot for MATLAB online
+%[text] Display all MATLAB search paths for scripts. It will be a lot for MATLAB Online
 %path
 %%
 % Add a path
@@ -27,7 +27,7 @@ addpath("/MATLAB Drive/somefolder/"); %[output:54e36aeb]
 %[text] Adding a path is usually done with the GUI by either copying file to the working folder
 %[text] Or right click the desired file and choose "add to path" on MATLAB desktop
 %%
-%[text] Another useful feature when working on ***Command Window***, you may use upper arrow ↑ to quickly retrieve your history commands.
+%[text] Another useful feature when working in the ***Command Window***, you may use the upper arrow ↑ to quickly retrieve your command history.
 %%
 %[text] ## Linspace and Colon methods
 % Create a vector 'v' with 101 linearly spaced points between 0 and 1
@@ -55,7 +55,7 @@ matZero = zeros(5, 2) % Creates a 5x2 matrix filled with zeros %[output:2d7ea438
 %%
 i4 = eye(4) % Creates a 4x4 identity matrix %[output:1adb74e4]
 %%
-%[text] #### Get the dimensions of arrays
+%[text] ## Get the dimensions of arrays
 %%
 % “size” gives length of all matrix dimension
 % “length” gives the length of largest array dimension
@@ -65,23 +65,23 @@ length(matZero) %[output:4883ff2a]
 %%
 %[text] ## Access/Modify Individual Elements in Vector/Matrix
 %%
-% Recall d
+% Recall i4
 disp(i4) %[output:17cbf36a]
 %%
 element_23 = i4(2, 3) % Access the element in the 2nd row, 3rd column of matrix 'i4' %[output:7357ba93]
-element_11 = i4(1,1) % Access the element in the 1st row, 1st column of matrix 'i4' %[output:8b2ce35a]
+element_11 = i4(1, 1) % Access the element in the 1st row, 1st column of matrix 'i4' %[output:8b2ce35a]
 %%
 % Recall h
 disp(h) %[output:1a17cbb3]
 %%
 % Modify individual elements in an array
-h(2,3) =10; % Set the element in the 2nd row, 3rd column of matrix 'h' to 10
-h(1,1) =5;  % Set the element in the 1st row, 1st column of matrix 'h' to 5 
+h(2, 3) = 10; % Set the element in the 2nd row, 3rd column of matrix 'h' to 10
+h(1, 1) = 5;  % Set the element in the 1st row, 1st column of matrix 'h' to 5 
 h %[output:94c7a720]
 %%
 %[text] ## Perform Matrix Operations
-A = [1 2; 3 4] %[output:7d189090]
-B = [5 6; 7 8] %[output:6edc6012]
+A = [1, 2; 3, 4] %[output:7d189090]
+B = [5, 6; 7, 8] %[output:6edc6012]
 %%
 % Matrix +-*/ scalar
 A+100, A-99, A*0.01, A/2 %[output:34e01f1f] %[output:65cb7dcf] %[output:92e82156] %[output:28e03f9d]
@@ -111,7 +111,7 @@ disp(A) %[output:549a3371]
 A_transpose = A' % or A_transpose = transpose(A) %[output:3c8ab019]
 A_inverse = inv(A) % matrix inverse or A_inverse = A^(-1) %[output:6afeaab7]
 %%
-B = [2,3;4,5;6,7] %[output:73495e7f]
+B = [2, 3; 4, 5; 6, 7] %[output:73495e7f]
 B_transpose = B' %[output:52b33bea]
 %%
 % Verify yourself
@@ -120,7 +120,7 @@ B_transpose = B' %[output:52b33bea]
 %[text] ## Concatenate arrays
 A = [1, 2; 3, 4] %[output:629c29f8]
 B = [5, 6; 7, 8] %[output:3a03c045]
-C_vertcat = vertcat(A,B) % another way is just C_vertcat = [A;B] %[output:8b2e9b69]
+C_vertcat = vertcat(A, B) % another way is just C_vertcat = [A;B] %[output:8b2e9b69]
 %%
 % C_vertcat will be:
 %  1  2
@@ -165,7 +165,7 @@ horzcat(str_vec, str_vec2) %[output:235bc8ac]
 matrix = [1.1, 2.2; 3.3, 4.4] %[output:4128c09c]
 matrix_str = num2str(matrix) %fix-width on each row %[output:95f23a34]
 matrix_b = [1, 100, 2.04; 7, 8, -9] %[output:5491725b]
-matrix_b_str= num2str(matrix_b) %fix-width on each row %[output:905afc66]
+matrix_b_str = num2str(matrix_b) %fix-width on each row %[output:905afc66]
 %%
 %[text] ## Rounding Commands
 num = 3.1415926;
@@ -191,12 +191,12 @@ save('all.mat');
 clear; % to verify the functionality of load below
 load('sample.mat'); % you can also double-click to load
 %%
-%[text] Supposing you have created a <u>data.txt</u> and put inside
+%[text] Suppose you have created a <u>data.txt</u> and put inside
 %[text] 1, 2, 3, 4
 %[text] 5, 6, 7, 8
 %[text] 9, 10, 11, 12
 %[text] 13, 14, 15, 16
-%[text] Supposing you have created a <u>data2.txt</u> and put inside
+%[text] Suppose you have created a <u>data2.txt</u> and put inside
 %[text] \-1, -2, -3, -4
 %[text] \-5, -6, -7, -8
 %[text] \-9, -10, -11, -12
@@ -207,12 +207,12 @@ data = load('data.txt') %[output:7c583c53]
 x = input("please input x between 1~4: ");
 y = input("please input y between 1~4: ");
 %%
-%[text] Load from user input as string
+%[text] Load from user input as a string
 file = input("please input file name to import: ", 's');
 result = load(file);
 %%
 % A small interface:
-disp(['The element you inquired at Row ', num2str(x), ' Column ', num2str(y), ' of file ', file, ' is: ', num2str(result(x,y))]) %[output:8f82d77e]
+disp(['The element you inquired at Row ', num2str(x), ' Column ', num2str(y), ' of file ', file, ' is: ', num2str(result(x, y))]) %[output:8f82d77e]
 
 %[appendix]{"version":"1.0"}
 %---
