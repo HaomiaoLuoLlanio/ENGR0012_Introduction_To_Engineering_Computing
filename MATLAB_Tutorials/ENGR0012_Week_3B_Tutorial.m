@@ -57,7 +57,9 @@ A_large(:,6) = 8;
 A_large %[output:521d1889]
 %%
 % Bulk modify the elements
+
 A_large([4,5],6) = [9; 10];
+
 A_large(1,[4,5,6]) = [412, 413, 414];
 A_large %[output:41cebd6d]
 %%
