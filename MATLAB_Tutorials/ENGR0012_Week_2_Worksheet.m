@@ -1,10 +1,10 @@
 %[text] # Week 2 Worksheet (Interactive, Optional to Try and Study)
 %[text] The worksheet is a comprehensive summary of the lecture material, organized into Live Script sections. Concise comments are added where needed to clarify difficult topics. You can request to access the solution or simply ask to address your concerns.
-%[text]
+%%
 %[text] ## Variables in MATLAB
 %[text] A variable is a place in computer memory where data is stored and can later be referenced by a particular name that we assign.
 %[text] Variables can be defined in both the ***Command Window*** or a ***Script Window*** (live script window), depending on the user's needs. All variables that we create will be reflected in the ***Workspace Window***, which helps us keep track of variable definitions and their current values.
-%[text]
+%[text] 
 %[text] Variable created in Command Window
 %[text] For example, in the command window, let's create the variable `alpha`
 % Try x=4 in Command Window
@@ -31,7 +31,7 @@
 
 %%
 %[text] Note that these suppressed variables are still defined in the ***Workspace***
-%[text]
+%[text] 
 %[text] Scalar Computation
 %[text] Adding the values stored in x and y. Run x `+ y` without a semicolon
 % Try adding x and y
@@ -83,7 +83,6 @@
 % You can assign char 'A' to a variable var1, as well as string "abcd" to a variable var2
 
 %[text] Check Workspace window for the `var1, var2` values and their Class type
-
 %%
 %[text] Note that this is different than assign A to var1, which would just copy variable A's value to var1
 %[text] Check Workspace window for `var1` and its Class type again!
@@ -97,8 +96,7 @@
 %[text] 2. Click on "New Script" to open the editor.
 %[text] 3. Write your MATLAB code in the editor.
 %[text] 4. Save the file with a .m extension, for example, `abc123.m`.
-%[text] 5. To run the script, you can either click the "Run" button in the editor or type the name of the script (without the .m extension) in the Command Window and press Enter.
-
+%[text] 5. To run the script, you can either click the "Run" button in the editor or type the name of the script (without the .m extension) in the Command Window and press Enter \
 %%
 % Let's create a simple script that calculates the sum of two numbers and displays the result.
 % Save the following code in a file named `abc123.m`:
@@ -106,7 +104,6 @@
 % r = 5;
 % area = pi*r*r
 %[text] To run the script, type `abc123` in the Command Window and press Enter.
-
 %%
 %[text] To save an m-file, use the "Save" button in the editor or press Ctrl+S.
 %[text] You can find m-files in the Current Folder window or by using the `dir` command in the Command Window.
@@ -122,29 +119,24 @@
 %[text] - Start with a letter.
 %[text] - Can contain letters, numbers, and underscores.
 %[text] - Cannot contain spaces or special characters.
-%[text] - Are case-sensitive (e.g., `Var` and `var` are different variables).
+%[text] - Are case-sensitive (e.g., `Var` and `var` are different variables). \
 % Examples of valid variable names:
 % validVar1 = 10;  % Uncomment to try
 % valid_var2 = 20; % Uncomment to try
 % validVar3 = 30;  % Uncomment to try
-
 %%
 % Examples of invalid variable names:
 % 1invalidVar = 40; % Starts with a number
 % invalid-var = 50; % Contains a hyphen
 % invalid var = 60; % Contains a space
-
 %%
 % MATLAB keywords cannot be used as variable names. For example:
 % if = 70; % 'if' is a keyword
-
 %%
 %[text] It is good practice to use meaningful variable names that describe the data or purpose of the variable, instead of random names like x, y, z, etc.
-
 %%
 %[text] ## Basic Mathematical Operations
 %[text] Examples of sqrt, abs, exp, log, log10, sum, prod, min, max, sort, rem, mod, sin, cos, tan
-
 % sqrt: square root of a scalar, e.g., 16
 
 %%
@@ -220,10 +212,8 @@
 % tan: tangent of an angle in radians
 
 %[text] The above functions are just a few examples of the mathematical operations
-
 %%
 %[text] ## disp, clear, clc, display, path, addpath
-
 % Random messy codes
 
 %%
@@ -239,11 +229,9 @@
 %[text] Display all MATLAB search paths for scripts. It will be a lot for MATLAB online
 %[text] Comment below to test which script folder you can run now
 % path
-
 %%
 %[text] Add a path, e.g., you want to run a script stored at this folder
 %[text] Put the path name and comment below to add path
-
 %%
 % addpath("/MATLAB Drive/somefolder/");
 
@@ -251,19 +239,16 @@
 %[text] By default, MATLAB Drive root folder is already in the path
 %[text] Adding a path is usually done with the GUI by either copying the file to the working folder
 %[text] Or right-click the desired file and choose "add to path" on MATLAB desktop
-
 %%
 %[text] Another useful feature when working in the ***Command Window*** is that you may use the up arrow ↑ to quickly retrieve your command history.
-
 %%
 %[text] ## Linspace and Colon Methods
-
 % Create a vector 'v' with 101 linearly spaced points between 0 and 1
 
 %[text] The first few elements of `v` would be v = \[0, 0.01, 0.02, 0.03, ..., 0.99, 1\]
 %[text] Note the choice of 101, instead of 100.
-%[text] Quiz yourself: linspace(0,1,5) would yield \[0, 0.2, 0.4, 0.6, 0.8, 1\] or \[0, 0.25, 0.5, 0.75, 1\]
-
+%[text] Quiz yourself: linspace(0,1,5) would yield \[0, 0.2, 0.4, 0.6, 0.8, 1\] or \[0, 0.25, 0.5, 0.75, 1\]?
+%linspace(0,1,5)
 %%
 % Create a vector 'arr' with 6 linearly spaced points between 5 and 30
 % The elements of 'arr' would be arr = [5, 10, 15, 20, 25, 30]
@@ -272,13 +257,11 @@
 % Use : to create a vector 'b' starting from 1 to 3 with a step size of 0.2
 
 %[text] The elements of `b` would be b = \[1, 1.2, 1.4, 1.6, 1.8, 2, 2.2, 2.4, 2.6, 2.8, 3\]
-
 %%
 % Show that the : notation will stop at the last valid value
 
 %%
 %[text] ## Creating Ones and Zeros Matrices
-
 % Creates a 3x3 square matrix filled with ones
 
 %%
@@ -295,7 +278,6 @@
 
 %%
 %[text] #### Get the Dimensions of Arrays
-
 %%
 % "size" gives the length of all matrix dimensions
 % "length" gives the length of the largest array dimension
@@ -325,7 +307,6 @@
 %%
 %[text] ## Perform Matrix Operations
 %[text] Given A = \[1 2; 3 4\], B = \[5 6; 7 8\]
-
 %%
 % Try Matrix (first) +-*/ scalar
 % A+100, A-99, A*0.01, A/2
@@ -344,7 +325,7 @@
 
 %%
 %[text] In element-wise operations:
-%[text] - A and B matrices have to match in size
+%[text] - A and B matrices have to match in size \
 %%
 % Matrix multiplication, same as excel mmult
 % C_mul
@@ -353,7 +334,6 @@
 % Show that A*B is not always equal to B*A
 
 %[text] If A is in dimension `m*n` and B is in dimension `s*t`, the inner dimension n has to be equal to s (`n=s`) so that A\*B is feasible, and the result dimension is `m*t`
-
 %%
 % Find two methods of doing matrix transpose
 
@@ -365,6 +345,7 @@
 
 %%
 % Verify A is invertible since the determinant ≠ 0
+
 
 %[appendix]{"version":"1.0"}
 %---
