@@ -250,6 +250,28 @@ disp(['The element you inquired at Row ', num2str(x), ' Column ', num2str(y), ' 
 % e.g. abc123.m is not a file now in current path
 % 
 %%
+%[text] ## Loops: When to Use (and When Not to Use)
+%[text] Loops let you repeat the same block of code multiple times.
+%[text] A loop keeps running as long as its condition is true (or until the loop finishes its range).
+%[text:table]{}
+%[text] | Use loops when... | Don't use loops when... |
+%[text] | --- | --- |
+%[text] | You need error checking (keep asking until input is valid). | You only need to run something once. |
+%[text] | You are doing a summation/product (e.g., $\sum$ or $\prod$). | You're implementing branching logic (use `if-else` / `switch`). |
+%[text] | You need to update/manipulate elements in an array/matrix repeatedly. | You are trying to replace `if-else` / `switch` with a loop. |
+%[text] | You would otherwise copy/paste the same lines many times. | A vectorized/built-in function already solves it cleanly. |
+%[text:table]
+%%
+%[text] ## For-loop vs While-loop
+%[text:table]{}
+%[text] | For-loop | While-loop |
+%[text] | --- | --- |
+%[text] | Use when you know how many iterations (or the range) in advance. | Use when you don't know how many iterations in advance. |
+%[text] | Great for iterating through ranges, arrays, and matrices. | Great for user input + error checking. |
+%[text] | Condition is usually a range like `1:10` or `1:2:n`. | Condition is usually a logical test like `(x < 1) || (x > 5)`. |
+%[text] | Error checking is possible, but often less natural than `while`. | Natural choice for error checking (repeat until valid). |
+%[text:table]
+%%
 %[text] ## Loop Prerequisite: Relational Operators
 %[text] - == is equivalence
 %[text] - ~= is non-equivalence
@@ -361,6 +383,11 @@ end %[output:group:6bb529b2]
 %[text] `while (condition)`
 %[text]          Statement block that must change the condition 
 %[text] `end`
+%[text] **Infinite-loop safety:**
+%[text] - If your `while` condition never becomes false, the loop will run forever.
+%[text] - To stop a stuck loop while running:
+%[text]   - Windows: `Ctrl + C`
+%[text]   - Mac: `Command + .`
 % Example: eat buffet
 full_stomach = 25; % 25 plates
 eaten = 0;
@@ -417,6 +444,36 @@ while (inputYear < 2000 || inputYear > 2050)
     inputYear = input('Enter a year between 2000 and 2050: ');
 end
 %%
+%[text] ### More Error-checking Patterns
+%[text] A common strategy is to write the loop condition as a **failure condition** (undesired cases).
+%[text] The loop keeps repeating while the input is invalid.
+%%
+%[text] Example 1 (range check): Desired $1 \le x \le 5$
+%[text] Failure condition (undesired): $(x < 1) || (x > 5)$
+x_range = input('Enter a number from 1 to 5: ');
+while (x_range < 1) || (x_range > 5)
+    x_range = input('Error: enter a number from 1 to 5: ');
+end
+%%
+%[text] Example 2 (specific values): only accept 'y' or 'n'
+yn = input("Enter 'y' or 'n': ", 's');
+while ~(strcmp(yn, 'y') || strcmp(yn, 'n'))
+    yn = input("Error: enter only 'y' or 'n': ", 's');
+end
+%%
+%[text] Example 3 (menu choice): only accept '1' or '2'
+choice = input("Enter '1' or '2': ", 's');
+while ~(strcmp(choice, '1') || strcmp(choice, '2'))
+    choice = input("Error: enter only '1' or '2': ", 's');
+end
+%%
+%[text] Example 4 (filename validation): only accept an existing filename
+%[text] Tip: `exist(filename, 'file')` returns 2 when the file exists.
+filename = input('Enter a filename that exists (e.g., sample.csv): ', 's');
+while exist(filename, 'file') ~= 2
+    filename = input('Error: file not found. Enter a filename that exists: ', 's');
+end
+%%
 %[text] ## For-loop
 %[text] 
 %[text] You know how many iterations in advance
@@ -457,6 +514,37 @@ end
 %[text] - ... \
 %[text] - The last iteration when i = 9, vec\_initial(9) = 0.01 \* 9 = 0.09
 %[text] - \[0.01 1 0.03 1 0.05 1 0.07 1 0.09 1\] \
+%%
+%[text] ### Summation ($\sum$) and Product ($\prod$) Examples
+%[text] Summation form:
+%[text] $$S = \sum_{i=1}^{n} a_i$$
+%[text] Product form:
+%[text] $$P = \prod_{i=1}^{n} a_i$$
+%%
+%[text] Example: sum and product of a vector
+a = [2, 4, 6, 8];
+
+S = 0;
+for i = 1:length(a)
+    S = S + a(i);
+end
+S
+S_builtin = sum(a)
+%%
+P = 1;
+for i = 1:length(a)
+    P = P * a(i);
+end
+P
+P_builtin = prod(a)
+%%
+%[text] Example: compute $\sum_{i=1}^{n} i^2$ using a for-loop
+n = 5;
+S_sq = 0;
+for i = 1:n
+    S_sq = S_sq + i^2;
+end
+S_sq
 %%
 %[text] ### Example: Use for-loop to manually find the extreme in a vector
 % Try: for-loop to find largest number
