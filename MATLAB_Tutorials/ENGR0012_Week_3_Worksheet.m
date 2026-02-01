@@ -29,7 +29,7 @@ A_large(2, :) %[output:09ecc8fb]
 A_large(:, 6) %[output:8aa0f38f]
 %[text] When you use `:` in the row or column position, MATLAB returns all entries along that dimension
 %%
-%[text] ### Bulk Modify
+%[text] ### Bulk Modification
 %%
 % Bulk modify the elements
 A_large(:, 6) = 8;
@@ -88,10 +88,10 @@ C_horzcat = horzcat(A, B) % Shorthand: [A,B] %[output:3178418b]
 %[text] - For `vertcat(A, B)`: A and B must have the **same number of columns**
 %[text] - For `horzcat(A, B)`: A and B must have the **same number of rows** \
 %%
-%[text] Quick checks (these should error):
+%[text] Quick checks:
 %[text] - Try `vertcat(A, D)`
 %[text] - Try `horzcat(A, D')`
-
+%[text] - What error did you obtain? \
 %%
 %[text] ## Converting Numbers to Strings (num2str) and Display
 %[text] When you want to display numbers along with text, you need to convert them.
@@ -117,7 +117,6 @@ converted = num2str(course_num) %[output:3cf501a7]
 % Concatenating strings works the same way as concatenating matrices
 % Find a way to obtain the string 'I enjoy MATLAB from ENGR12'
 
-
 %%
 %[text] ## Unexpected Display (Should Avoid)
 %%
@@ -126,7 +125,6 @@ A = 5.145;
 % You shouldn't mix row vectors with two types: string and numerical
 disp(['The value of A is: ', A]) %[output:254f1a04]
 disp(["The value of A is: ", num2str(A)]) %[output:1e793c0c]
-
 % Should not try to assign something to disp; below are two warning cases
 % (won't trigger an error)
 % disp = ['The value of A is 5.145']
@@ -157,19 +155,15 @@ disp(["The value of A is: ", num2str(A)]) %[output:1e793c0c]
 %%
 % Generate a random number between 0 and 1
 r = rand %[output:35709e50]
-
 %%
 % Generate a row vector of 5 random numbers between 0 and 1
 rand_vec = rand(1, 5) %[output:179ab1f8]
-
 %%
 % Generate a matrix of 3*2 with random numbers between 0 and 1
 rand_mat = rand(3, 2) %[output:5f9d57e1]
-
 %%
 % Generate a random integer between 1 and 100
 randi_num = randi(100) %[output:245a04e0]
-
 %%
 % Generate a row vector (1*5 size) of random integers between 1 and 100
 randi_num_vec = randi(100, 1, 5) %[output:4ff951c2]
@@ -238,7 +232,7 @@ fname = input("Please input file name to import: ", 's');
 %[text] A **literal** is a value written **directly** in the code.
 %[text] `5, 3.14, 'hello', [1 2 3]`
 %[text] - It does **not** have a name.
-%[text] - You cannot change it, e.g. you assign 5 = 4 or 'hello' = 'hi' \
+%[text] - You cannot change it, e.g. you cannot assign 5 = 4 or 'hello' = 'hi' \
 %[text] A **variable** is a **named container** that stores a value.
 %[text] `x, approxi_pi, name, row3`
 %[text] - The name refers to the data (would cause error if no value stored there)
@@ -410,7 +404,7 @@ end
 %[text] - Enter loop for the second time, fxnew(2) = 2\*2 = 4
 %[text] - \[1, 4, 0, 0, 0, 0, 0, 0, 0, 0\]
 %[text] - j is incremented to 3 \
-%[text] - ... 
+%[text] - ...
 %[text] - fxnew(10) = 10\*10 = 100
 %[text] - \[1, 4, 9, 16, 25, 36, 49, 64, 81, 100\]
 %[text] - j is incremented to 11 \
@@ -424,7 +418,7 @@ while (inputYear < 2000 || inputYear > 2050)
 end
 %%
 %[text] ## For-loop
-%[text]
+%[text] 
 %[text] You know how many iterations in advance
 %[text] `for var = start:increment:end` 
 %[text]          statement block
