@@ -1,57 +1,59 @@
 %[text] # Week 3 Worksheet (Interactive, Optional to Try and Study)
+%[text] Run cell-by-cell and fill in the blanks.
+%[text] Treat this as practice: try first, then check outputs.
 %%
 %[text] ## Review: Access/Modify Individual Elements in Vector and Matrix
 %%
 %[text] Let's build a large matrix first
-A_large = [0.1 0.02 0.3 40 5 600;8 9 11 12 13 16;1 -2 4 -8 5 -9;-67 -90 3 5.89 5.12 611;36 100 31 7 3 6.11;-1.414 3.1415 2.8 90 3.45 6.189] %[output:8b2e9b69]
+A_large = [0.1, 0.02, 0.3, 40, 5, 600; 8, 9, 11, 12, 13, 16; 1, -2, 4, -8, 5, -9; -67, -90, 3, 5.89, 5.12, 611; 36, 100, 31, 7, 3, 6.11; -1.414, 3.1415, 2.8, 90, 3.45, 6.189] %[output:8b2e9b69]
 %%
-%Try this first
-A_large([1 2], [1 2]) %[output:334a59fd]
-%[text] You notice that we just extract the the first two rows and first two columns of the matrix
+% Try this first
+A_large([1, 2], [1, 2]) %[output:334a59fd]
+%[text] You notice that we just extract the first two rows and first two columns of the matrix
 %%
-%Try this next
-A_large([1 5 6], [3 4]) %[output:7c4c3c63]
-%[text] This time, we extract the the (1st & 5th & 6th rows) and (3rd & 4th columns) of the matrix
+% Try this next
+A_large([1, 5, 6], [3, 4]) %[output:7c4c3c63]
+%[text] This time, we extract the (1st & 5th & 6th rows) and (3rd & 4th columns) of the matrix
 %%
 % Recall that 2:5 = [2,3,4,5]
 % 2:2:6 = [2,4,6]
 
 % Try these:
-A_large(2:5, 4) % from 2 to 5th rows, 4th cols %[output:77dadd72]
-A_large(1, 2:2:6) % 1st row, and from 2 to 6, extract every other cols, %[output:177c2064]
+A_large(2:5, 4) % From 2 to 5th rows, 4th column %[output:77dadd72]
+A_large(1, 2:2:6) % 1st row, and from 2 to 6, extract every other column %[output:177c2064]
 A_large(2:5, 2:2:6) %[output:5458b5ea]
 %%
 % One more useful feature of using colon
 % Try this:
-A_large(2,:) %[output:09ecc8fb]
-A_large(:,6) %[output:8aa0f38f]
-%[text] When putting just a colon on either row or column field of a matrix indexing, it returns all entries of that dimension
+A_large(2, :) %[output:09ecc8fb]
+A_large(:, 6) %[output:8aa0f38f]
+%[text] When you use `:` in the row or column position, MATLAB returns all entries along that dimension
 %%
-%[text] #### Bulk Modify
+%[text] ### Bulk Modify
 %%
 % Bulk modify the elements
-A_large(:,6) = 8;
+A_large(:, 6) = 8;
 A_large %[output:2dda71b5]
 %%
 % Bulk modify the elements
-A_large([4,5],6) = [9; 10]; 
-A_large(1,[4,5,6]) = [412, 413, 414];
+A_large([4, 5], 6) = [9; 10]; 
+A_large(1, [4, 5, 6]) = [412, 413, 414];
 A_large %[output:3c99c4d5]
 %%
-%[text] #### Modify Out-of-bound
+%[text] ### Modify Out-of-bound
 % Try to access out-of-bounds element
 % A19 = A_large(1,9)
 % A82 = A_large(8,2)
 %%
 % Try to modify out-of-bounds element
-A_large(1,9) = 3.14;
+A_large(1, 9) = 3.14;
 %%
 % Try to modify out-of-bounds element
-A_large(8,2) = 3.14;
+A_large(8, 2) = 3.14;
 A_large %[output:34624cce]
-%[text]   An attempt to modify an out-of-bound element would just increase the size of matrix and fill the unassigned elements to 0s
+%[text] An attempt to modify an out-of-bound element will increase the size of the matrix and fill the unassigned elements with 0s
 %%
-A_large(:,:) % no need to access in such a way, but the same as A_large %[output:09784a88]
+A_large(:, :) % No need to access in such a way, but the same as A_large %[output:09784a88]
 %%
 %[text] ## Concatenating Vectors, Matrices
 %[text] Sometimes you need to combine smaller matrices into larger ones.
@@ -69,7 +71,7 @@ C_vertcat = vertcat(A, B) % Shorthand: [A;B] %[output:4ba9bc59]
 %[text] 5  6
 %[text] 7  8
 %%
-% You can vertically concatenate multiple matrices as long as they have same cols 
+% You can vertically concatenate multiple matrices as long as they have the same number of columns
 D = [100, 200; 100, 300; 100, 400];
 vertcat(C_vertcat, D) %[output:32f259c8]
 %%
@@ -86,21 +88,21 @@ C_horzcat = horzcat(A, B) % Shorthand: [A,B] %[output:3178418b]
 %[text] - For `vertcat(A, B)`: A and B must have the **same number of columns**
 %[text] - For `horzcat(A, B)`: A and B must have the **same number of rows** \
 %%
-% Verify that the matrix A (2*2) and matrix D (3*2) cannot be vertically concatenated
-
-% Verify that the matrix A (2*2) and transposed matrix of D (2*3) cannot be horizatally concatenated
+%[text] Quick checks (these should error):
+%[text] - Try `vertcat(A, D)`
+%[text] - Try `horzcat(A, D')`
 
 %%
-%[text] ## Converting Number to String (num2str) and Display 
-%[text] When you want to display numbers along with text, you need to convert them. 
+%[text] ## Converting Numbers to Strings (num2str) and Display
+%[text] When you want to display numbers along with text, you need to convert them.
 %[text] `num2str()` converts a number into a string format.
-%[text] Try course\_num = 12 and converted = num2str(course\_num) to verify the two variables' type
+%[text] Try course\_num = 12 and converted = num2str(course\_num) to verify the two variables' types
 % Define a number
 course_num = 12 %[output:0b4b8ba6]
 % Convert to string
 converted = num2str(course_num) %[output:3cf501a7]
 %%
-% Char-type of array (inside single quote, not double quotes) can be concatenated horizontally [?,?,?]
+% Char-type arrays (inside single quotes, not double quotes) can be concatenated horizontally [?, ?, ?]
 % Try to display 'I ' and 'enjoy ' and 'MATLAB ' inside [ , , ] together
 % ['I ', 'enjoy ', 'MATLAB ']
 
@@ -109,11 +111,11 @@ converted = num2str(course_num) %[output:3cf501a7]
 
 %%
 % Use num2str() to combine numbers with text
-% Mixing text and numbers: try 'From ', 'ENGR' and course_num to obtain 'From ENGR12' or 'From ENGR11';
+% Mixing text and numbers: try 'From ', 'ENGR', and course_num to obtain 'From ENGR12' or 'From ENGR11';
 
 %%
 % Concatenating strings works the same way as concatenating matrices
-% Find a way to obtain string 'I enjoy MATLAB from ENGR12'
+% Find a way to obtain the string 'I enjoy MATLAB from ENGR12'
 
 
 %%
@@ -121,18 +123,18 @@ converted = num2str(course_num) %[output:3cf501a7]
 %%
 A = 5.145;
 
-% You shouldn't mix the row vector with two types string and numerical
+% You shouldn't mix row vectors with two types: string and numerical
 disp(['The value of A is: ', A]) %[output:254f1a04]
 disp(["The value of A is: ", num2str(A)]) %[output:1e793c0c]
 
-% Should not try to assign something to disp, below are two warning cases
-% (won't trigger error)
+% Should not try to assign something to disp; below are two warning cases
+% (won't trigger an error)
 % disp = ['The value of A is 5.145']
 % disp = ('The value of A is 5.145')
 %%
 %[text] ## Rounding Numbers
 %[text] Different rounding functions give different results.
-%[text] Use `round()` for nearest integer, `ceil()` for always rounding up, `floor()` for always rounding down.
+%[text] Use `round()` for the nearest integer, `ceil()` for always rounding up, `floor()` for always rounding down.
 %[text] num = 3.1415926;
 % Round to nearest integer
 
@@ -162,7 +164,7 @@ rand_vec = rand(1, 5) %[output:179ab1f8]
 
 %%
 % Generate a matrix of 3*2 with random numbers between 0 and 1
-rand_mat = rand(3,2) %[output:5f9d57e1]
+rand_mat = rand(3, 2) %[output:5f9d57e1]
 
 %%
 % Generate a random integer between 1 and 100
@@ -176,13 +178,13 @@ randi_num_vec = randi(100, 1, 5) %[output:4ff951c2]
 randi_num_mat = randi(100, 3) %[output:65feb2e4]
 %%
 % Generate a row vector (1*8 size) of random integers between -10 and 15
-randi_range_mat = randi([-10,15], 1, 8) %[output:1afd45a9]
+randi_range_mat = randi([-10, 15], 1, 8) %[output:1afd45a9]
 %%
 %[text] ## Statistics Functions
 %%
 % Let's first generate a row vector of 55 random integers from 60 to 100
-% assume it is the final grade of some ENGR12 course
-grades = randi([60,100], 1, 55) %[output:5a51928b]
+% Assume it is the final grade of some ENGR12 course
+grades = randi([60, 100], 1, 55) %[output:5a51928b]
 %%
 % Find the average, median, mode, variance, standard deviation of the
 % grades
@@ -197,7 +199,7 @@ var_grd = var(grades);
 %%
 %[text] ## Saving and Loading Data
 %[text] MATLAB can save your variables to files (.mat files) for later use.
-%[text] But saving into .csv or .txt files are more flexible for other use scenarios
+%[text] But saving into .csv or .txt files is more flexible for other use scenarios
 % Create some sample data
 sample_vec = randi([60, 100], 5, 1);
 sample_mat = rand(4);
@@ -214,19 +216,19 @@ clear
 loaded1 = load('sample.txt');
 loaded2 = load('sample.csv');
 %%
-%[text] ## Input Function, Exist Function
+%[text] ## Input and Exist Functions
 %%
 %[text] User inputs a number
-x = input("please input x between 1~4: ");
-y = input("please input y between 1~4: ");
+x = input("Please input x between 1~4: ");
+y = input("Please input y between 1~4: ");
 %%
 %[text] User inputs a string
-fname = input("please input file name to import: ", 's');
+fname = input("Please input file name to import: ", 's');
 %%
-%[text] Supposing above you have created a sample.csv and put some data inside
-%[text] Supposing you also have created a sample.txt and put inside
+%[text] Suppose you have created a sample.csv and put some data inside
+%[text] Suppose you also have created a sample.txt and put inside
 %%
-% Let us try to load the content from fname to a vec
+% Let's try to load the content from fname into a vector
 % You can use res = load(fname), but not load("fname")
 
 % You can use res = load("sample.txt"), but not load(sample.txt)
@@ -234,7 +236,7 @@ fname = input("please input file name to import: ", 's');
 %%
 %[text] **Literal and Variable Differences**
 %[text] A **literal** is a value written **directly** in the code.
-%[text] `5, 3.14, 'hello', [1` `2` `3``]`
+%[text] `5, 3.14, 'hello', [1 2 3]`
 %[text] - It does **not** have a name.
 %[text] - You cannot change it, e.g. you assign 5 = 4 or 'hello' = 'hi' \
 %[text] A **variable** is a **named container** that stores a value.
@@ -242,23 +244,23 @@ fname = input("please input file name to import: ", 's');
 %[text] - The name refers to the data (would cause error if no value stored there)
 %[text] - The value **can change**. e.g. you can assign such as hello = 'hi', A5 = 4 \
 %%
-% Now let result stores the loaded content of sample.csv
+% Now let result store the loaded content of sample.csv
 result = load("sample.csv");
 %%
 % Can you finish this small interface:
-disp(['The element you inquired at Row ', num2str(x), ' Column ', num2str(y), ' of file ', fname, ' is: ', num2str(result(x,y))]) %[output:649a632c]
+disp(['The element you inquired at Row ', num2str(x), ' Column ', num2str(y), ' of file ', fname, ' is: ', num2str(result(x, y))]) %[output:649a632c]
 %%
-%[text] You can use exist() function to check if something already exists, e.g., a variable or a file
-%[text] In this course, we only care whether a file exists,
+%[text] You can use the exist() function to check if something already exists, e.g., a variable or a file
+%[text] In this course, we only care whether a file exists.
 % Try to display to see what value the exist() function returns if the inquired item doesn't exist
 % e.g. abc123.m is not a file now in current path
 % 
 %%
-%[text] ## Loop Prerequisite: Relation Operators
+%[text] ## Loop Prerequisite: Relational Operators
 %[text] - == is equivalence
 %[text] - ~= is non-equivalence
-%[text] - In almost all programming languages, one single equal-sign means "Assignment", assign RHS to LHS
-%[text] - double equal-signs means "Check Equivalence" \
+%[text] - In almost all programming languages, one single equal-sign means "Assignment": assign RHS to LHS
+%[text] - Double equal-signs means "Check Equivalence" \
 a = 5;
 b = 10;
 
@@ -270,20 +272,20 @@ f4 = (a ~= b); % true
 f5 = (a >= b); % false
 f6 = (a <= b); % true
 %%
-%[text] ## Logic Operators (&&, ||, ~)
+%[text] ## Logical Operators (&&, ||, ~)
 %[text] - Both statement 1 AND statement 2 are true:  s1 && s2
-%[text] - At least one of statement 1 OR statement 2 is true:    s1 || s2
-%[text] - NOT statement 1 is true:   ~s1 \
+%[text] - At least one of statement 1 OR statement 2 is true:  s1 || s2
+%[text] - NOT statement 1 is true:  ~s1 \
 %%
 % Examples of logical Class: check workspace!
 f7 = f2 && f4; % f7 is true since both f2 and f4 are true
-f8 = f2 && f3; % f8 is true since one of (f2 or f3) is true
-f9 = ~f2; %f9 is false since f2 is true
+f8 = f2 || f3; % f8 is true since one of (f2 or f3) is true
+f9 = ~f2; % f9 is false since f2 is true
 %%
 %[text] ## If-end statement, If-else-end statement
 %%
 if a == 9
-    disp("a is equal to 9")
+    disp('a is equal to 9')
 end
 %%
 if a > b %[output:group:14f880fb]
@@ -301,9 +303,9 @@ end %[output:group:379af058]
 %[text] ## If-elseif-else-end statement
 %[text] <u>if (Condition 1)</u>
 %[text]  do thing 1
-%[text] elseif (Condition 2)  % when you are here, it must mean Condition 1 is false
+%[text] elseif (Condition 2)  % When you are here, it must mean Condition 1 is false
 %[text]     do thing 2
-%[text] elseif (Condition 3) % when you are here, it must mean Condition 2 and Condition 3 are both false
+%[text] elseif (Condition 3) % When you are here, it must mean Condition 1 and Condition 2 are both false
 %[text]     do thing 3
 %[text] ......
 %[text] else
@@ -315,24 +317,24 @@ temperature = 75;
 
 if temperature < 60 %[output:group:690cfaf1]
     disp('The temperature is cold.')
-elseif (temperature >=60 && temperature <=90) % this can be simplied to temp <=90 only
+elseif (temperature >= 60 && temperature <= 90) % This can be simplified to temp <= 90 only
     disp('The temperature is moderate.') %[output:26da71f8]
 else
     disp('The temperature is hot.')
 end %[output:group:690cfaf1]
 %%
 % Another example with user input
-temp = input("please input a temp: ");
+temp = input("Please input a temp: ");
 if temp < 60 %[output:group:64d14999]
     disp('The temperature is cold.')
-elseif (temp >=60 && temp<=90)
+elseif (temp >= 60 && temp <= 90)
     disp('The temperature is moderate.') %[output:8f8708bb]
 else
     disp('The temperature is hot.')
 end %[output:group:64d14999]
 %%
 %[text] ## Switch Case
-%[text] switch (var )
+%[text] switch (var)
 %[text]         case value1 
 %[text]                 statement1 
 %[text]         case value2 
@@ -360,7 +362,7 @@ switch day %[output:group:6bb529b2]
 end %[output:group:6bb529b2]
 %%
 %[text] ## While-loop
-%[text] You don't know how many iterations in advance (it is up to termination conditions!)
+%[text] You don't know how many iterations in advance (it depends on termination conditions!)
 %[text] 
 %[text] `while (condition)`
 %[text]          Statement block that must change the condition 
@@ -374,37 +376,37 @@ while (eaten < full_stomach)
     eaten = eaten + plates;
 
 end
-disp(['You are finally full and ate ', num2str(eaten),' plates!']); %[output:1f28de7f]
+disp(['You are finally full and ate ', num2str(eaten), ' plates!']); %[output:1f28de7f]
 %%
 %[text] Enter the while-loop by checking the condition:
 %[text] - if false, skip the entire loop
-%[text] - if true, executing the statement block, check the condition again. If the condition is still true, execute the statement block again. Otherwise, exit the while-loop \
+%[text] - if true, execute the statement block, then check the condition again. If the condition is still true, execute the statement block again. Otherwise, exit the while-loop \
 %%
-%[text] #### Example Use: go through vector element via index i
+%[text] ### Example: Go through vector elements via index i
 vec = randi([-5, 5], 1, 9);
 
-i = 1;                % start by assigning initial index i = 1
-while i<= length(vec) % won't stop until i is greater than length() %[output:group:744428fc]
-    disp(vec(i));     % do something to each entry %[output:36945b74]
-    i = i + 1;        % increase i by 1 so it can go to next index and finally exit by exceeding over length 
+i = 1;                  % Start by assigning initial index i = 1
+while i <= length(vec)  % Won't stop until i is greater than length() %[output:group:744428fc]
+    disp(vec(i));       % Do something to each entry %[output:36945b74]
+    i = i + 1;          % Increase i by 1 so it can go to next index and finally exit by exceeding length 
 end %[output:group:744428fc]
 %%
-%[text] #### Example Use: go through vector element and update
+%[text] ### Example: Go through vector elements and update
 xnew = 1:10;
 fxnew = zeros(1, length(xnew));
 
 j = 1;
-while j< length(fxnew)+1
+while j < length(fxnew) + 1
     fxnew(j) = j*j;
     j = j + 1;
 end
 %[text] Trace the above while-loop:
 %[text] - xnew = \[ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10\], fxnew = \[0, 0, 0, 0, 0, 0, 0, 0, 0, 0\] \
-%[text] - At j=1, 2\<11 is true: 
+%[text] - At j=1, 1\<11 is true:
 %[text] - Enter loop for the first time, fxnew(1) = 1\*1 = 1
 %[text] - \[1, 0, 0, 0, 0, 0, 0, 0, 0, 0\]
 %[text] - j is incremented to 2 \
-%[text] - At j=2, 3\<11 is still true
+%[text] - At j=2, 2\<11 is still true
 %[text] - Enter loop for the second time, fxnew(2) = 2\*2 = 4
 %[text] - \[1, 4, 0, 0, 0, 0, 0, 0, 0, 0\]
 %[text] - j is incremented to 3 \
@@ -412,17 +414,17 @@ end
 %[text] - fxnew(10) = 10\*10 = 100
 %[text] - \[1, 4, 9, 16, 25, 36, 49, 64, 81, 100\]
 %[text] - j is incremented to 11 \
-%[text] - At j=11, 12\<11 is false
+%[text] - At j=11, 11\<11 is false
 %[text] - Exit loop \
 %%
-%[text] #### Error-checking: Keep asking until user gives a valid number
+%[text] ### Error-checking: Keep asking until user gives a valid number
 inputYear = input('Enter a year between 2000 and 2050: ');
 while (inputYear < 2000 || inputYear > 2050)
     inputYear = input('Enter a year between 2000 and 2050: ');
 end
 %%
 %[text] ## For-loop
-%[text] 
+%[text]
 %[text] You know how many iterations in advance
 %[text] `for var = start:increment:end` 
 %[text]          statement block
@@ -436,16 +438,16 @@ end
 %[text]          statement block
 %[text] `end`
 %%
-%[text] #### Example: use for-loop to go through vector element
+%[text] ### Example: Use for-loop to go through vector elements
 for x = [0, pi/4, pi/2, 3*pi/4, pi] %[output:group:955790b4]
     disp(sin(x)); %[output:816daa28]
 end %[output:group:955790b4]
 %%
-%[text] #### Example: use for-loop to update vector element
+%[text] ### Example: Use for-loop to update vector elements
 %%
 vec_initial = ones(1, length(xnew));
 
-% e.g., update every 2nd element from first element
+% E.g., update every 2nd element from first element
 for i = 1:2:length(vec_initial)
    vec_initial(i) = 0.01 * i;
 end
@@ -462,12 +464,12 @@ end
 %[text] - The last iteration when i = 9, vec\_initial(9) = 0.01 \* 9 = 0.09
 %[text] - \[0.01 1 0.03 1 0.05 1 0.07 1 0.09 1\] \
 %%
-%[text] #### Example: use for-loop to mannually find the extreme in vector
+%[text] ### Example: Use for-loop to manually find the extreme in a vector
 % Try: for-loop to find largest number
 vec_unsorted = randi([-50, 50], 1, 20);
 largest = vec_unsorted(1);
 for i = 2:length(vec_unsorted)
-    if (vec_unsorted(i)>largest)
+    if (vec_unsorted(i) > largest)
         largest = vec_unsorted(i);
     end
 end
@@ -475,7 +477,7 @@ disp(largest); %[output:2bc1e25f]
 %%
 %[text] ## Challenging Practices
 %%
-%[text] Try to use for-loop to find average of all vector entries whose value is \>25
+%[text] Try to use a for-loop to find the average of all vector entries whose value is \>25
 currentSum = 0;
 currentCount = 0;
 loopIndex = 1;
@@ -488,16 +490,16 @@ while (loopIndex <= length(vec_unsorted))
     loopIndex = loopIndex + 1;
 end
 
-avg_of_25_more = currentSum/currentCount %[output:7e25f751]
+avg_of_25_more = currentSum / currentCount %[output:7e25f751]
 %%
-%[text] Try to find the largest square number in this range \[2000, 2050\]
+%[text] Try to find the largest square number in the range \[2000, 2050\]
 %[text] Hints: initialize result = 0
-%[text] starts from x=2000, if 2000 is square number, update result = 2000
-%[text] increase x by 1, if 2001 is square number, update result = 2001
+%[text] Start from x=2000, if 2000 is a square number, update result = 2000
+%[text] Increase x by 1, if 2001 is a square number, update result = 2001
 %[text] ...
 %[text] Increase until x=2050, if 2050 is a square number, update result = 2050
 %[text] A number is a square number if it is the result of some integer squared (in other words, its sqrt result is a whole number)
-%[text] A whole number is a number whose round-ing value is the same as itself.
+%[text] A whole number is a number whose rounding value is the same as itself.
 currentlargest = 0;
 for var = 2000:2050
     if sqrt(var) == floor(sqrt(var))
