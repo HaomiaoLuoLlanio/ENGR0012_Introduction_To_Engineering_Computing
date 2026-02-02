@@ -1,6 +1,5 @@
 %[text] # Week 3 Worksheet (Interactive, Optional to Try and Study)
-%[text] Run cell-by-cell and fill in the blanks.
-%[text] Treat this as practice: try first, then check outputs.
+%[text] The worksheet is a comprehensive summary of the lecture material, organized into Live Script sections. Concise comments are added where needed to clarify difficult topics. You can request to access the solution or simply ask to address your concerns.
 %%
 %[text] ## Review: Access/Modify Individual Elements in Vector and Matrix
 %%
@@ -174,26 +173,43 @@ randi_num_mat = randi(100, 3) %[output:65feb2e4]
 % Generate a row vector (1*8 size) of random integers between -10 and 15
 randi_range_mat = randi([-10, 15], 1, 8) %[output:1afd45a9]
 %%
+%[text] **Pattern Recognition**
+%[text] - `somefunc(p, n)` or `somefunc(n)` creates an n × n matrix (p usually controls type or values, not the size)
+%[text] - `somefunc(p, n1, n2)` or `somefunc(n1, n2)` creates an n1 × n2 matrix, e.g., ones/zeros/rand/randi \
+%%
 %[text] ## Statistics Functions
 %%
 % Let's first generate a row vector of 55 random integers from 60 to 100
 % Assume it is the final grade of some ENGR12 course
 grades = randi([60, 100], 1, 55) %[output:5a51928b]
 %%
-% Find the average, median, mode, variance, standard deviation of the
-% grades
+% Find the average, median, mode, variance, standard deviation of the grades
 avg_grd = mean(grades);
 median_grd = median(grades);
 mode_grd = mode(grades);
 stdev_grd = std(grades);
 var_grd = var(grades);
-%%
-% Find the range, and the 25% or 75% percentile grade
 
+% Display the average, median, mode, standard deviation, and variance of the grades
+disp(['Average grade: ', num2str(avg_grd)]); %[output:738ab64d]
+disp(['Median grade: ', num2str(median_grd)]); %[output:7ecfef15]
+disp(['Mode grade: ', num2str(mode_grd)]); %[output:4b9abc7a]
+disp(['Standard deviation: ', num2str(stdev_grd)]); %[output:3427d988]
+disp(['Variance: ', num2str(var_grd)]); %[output:06c5d4dd]
+%%
+% Find the range and the 25% or 75% percentile grade
+range_grd = range(grades);
+percentile_25 = prctile(grades, 25);
+percentile_75 = prctile(grades, 75);
+
+% Display the info
+disp(['Range of grades: ', num2str(range_grd)]); %[output:98723856]
+disp(['25th percentile grade: ', num2str(percentile_25)]); %[output:93fb2437]
+disp(['75th percentile grade: ', num2str(percentile_75)]); %[output:7026a55b]
 %%
 %[text] ## Saving and Loading Data
-%[text] MATLAB can save your variables to files (.mat files) for later use.
-%[text] But saving into .csv or .txt files is more flexible for other use scenarios
+%[text] MATLAB can save variables for later use, storing them in `.mat` files by default.
+%[text] For greater compatibility or plain-text viewing, data can also be saved to `.csv` or `.txt` files using `save('file_name.ext','var_name','-ascii’)`
 % Create some sample data
 sample_vec = randi([60, 100], 5, 1);
 sample_mat = rand(4);
@@ -226,7 +242,9 @@ fname = input("Please input file name to import: ", 's');
 % You can use res = load(fname), but not load("fname")
 
 % You can use res = load("sample.txt"), but not load(sample.txt)
-
+%%
+fname2 = "sample.txt";
+disp(exist(fname2, 'file')) %[output:649a632c]
 %%
 %[text] **Literal and Variable Differences**
 %[text] A **literal** is a value written **directly** in the code.
@@ -242,35 +260,13 @@ fname = input("Please input file name to import: ", 's');
 result = load("sample.csv");
 %%
 % Can you finish this small interface:
-disp(['The element you inquired at Row ', num2str(x), ' Column ', num2str(y), ' of file ', fname, ' is: ', num2str(result(x, y))]) %[output:649a632c]
+disp(['The element you inquired at Row ', num2str(x), ' Column ', num2str(y), ' of file ', fname, ' is: ', num2str(result(x, y))]) %[output:038ce7bf]
 %%
 %[text] You can use the exist() function to check if something already exists, e.g., a variable or a file
 %[text] In this course, we only care whether a file exists.
 % Try to display to see what value the exist() function returns if the inquired item doesn't exist
 % e.g. abc123.m is not a file now in current path
-% 
-%%
-%[text] ## Loops: When to Use (and When Not to Use)
-%[text] Loops let you repeat the same block of code multiple times.
-%[text] A loop keeps running as long as its condition is true (or until the loop finishes its range).
-%[text:table]{}
-%[text] | Use loops when... | Don't use loops when... |
-%[text] | --- | --- |
-%[text] | You need error checking (keep asking until input is valid). | You only need to run something once. |
-%[text] | You are doing a summation/product (e.g., $\sum$ or $\prod$). | You're implementing branching logic (use `if-else` / `switch`). |
-%[text] | You need to update/manipulate elements in an array/matrix repeatedly. | You are trying to replace `if-else` / `switch` with a loop. |
-%[text] | You would otherwise copy/paste the same lines many times. | A vectorized/built-in function already solves it cleanly. |
-%[text:table]
-%%
-%[text] ## For-loop vs While-loop
-%[text:table]{}
-%[text] | For-loop | While-loop |
-%[text] | --- | --- |
-%[text] | Use when you know how many iterations (or the range) in advance. | Use when you don't know how many iterations in advance. |
-%[text] | Great for iterating through ranges, arrays, and matrices. | Great for user input + error checking. |
-%[text] | Condition is usually a range like `1:10` or `1:2:n`. | Condition is usually a logical test like `(x < 1) || (x > 5)`. |
-%[text] | Error checking is possible, but often less natural than `while`. | Natural choice for error checking (repeat until valid). |
-%[text:table]
+disp(exist("abc123.m", 'file')) %[output:69a9236d]
 %%
 %[text] ## Loop Prerequisite: Relational Operators
 %[text] - == is equivalence
@@ -297,6 +293,7 @@ f6 = (a <= b); % true
 f7 = f2 && f4; % f7 is true since both f2 and f4 are true
 f8 = f2 || f3; % f8 is true since one of (f2 or f3) is true
 f9 = ~f2; % f9 is false since f2 is true
+%[text] Only expressions of logical class can be placed after if or while. These are referred as conditional statements, e.g., f1, f2, f3, … f7, f8, f9 
 %%
 %[text] ## If-end statement, If-else-end statement
 %%
@@ -307,11 +304,11 @@ end
 if a > b %[output:group:14f880fb]
     disp('a is greater than b');
 else
-    disp('a is not greater than b'); %[output:038ce7bf]
+    disp('a is not greater than b'); %[output:26da71f8]
 end %[output:group:14f880fb]
 %%
 if f2 % same as putting a<b here %[output:group:379af058]
-    disp('a is less than b'); %[output:69a9236d]
+    disp('a is less than b'); %[output:8f8708bb]
 else
     disp('a is not less than b');
 end %[output:group:379af058]
@@ -334,7 +331,7 @@ temperature = 75;
 if temperature < 60 %[output:group:690cfaf1]
     disp('The temperature is cold.')
 elseif (temperature >= 60 && temperature <= 90) % This can be simplified to temp <= 90 only
-    disp('The temperature is moderate.') %[output:26da71f8]
+    disp('The temperature is moderate.') %[output:5bb3ddb2]
 else
     disp('The temperature is hot.')
 end %[output:group:690cfaf1]
@@ -344,13 +341,13 @@ temp = input("Please input a temp: ");
 if temp < 60 %[output:group:64d14999]
     disp('The temperature is cold.')
 elseif (temp >= 60 && temp <= 90)
-    disp('The temperature is moderate.') %[output:8f8708bb]
+    disp('The temperature is moderate.') %[output:1f28de7f]
 else
     disp('The temperature is hot.')
 end %[output:group:64d14999]
 %%
 %[text] ## Switch Case
-%[text] switch (var)
+%[text] <u>switch</u> (var)
 %[text]         case value1 
 %[text]                 statement1 
 %[text]         case value2 
@@ -359,6 +356,7 @@ end %[output:group:64d14999]
 %[text]                 statement x
 %[text]         otherwise
 %[text]                 other\_statement
+%[text] <u>end</u>
 day = input('Enter a number (1-7) to represent the day of the week: ');
 switch day %[output:group:6bb529b2]
     case 1
@@ -372,7 +370,7 @@ switch day %[output:group:6bb529b2]
     case 5
         disp('Friday')
     case {6, 7}
-        disp('Weekends') %[output:5bb3ddb2]
+        disp('Weekends') %[output:36945b74]
     otherwise
         disp('Invalid input. Please enter a number between 1 and 7.')
 end %[output:group:6bb529b2]
@@ -386,8 +384,12 @@ end %[output:group:6bb529b2]
 %[text] **Infinite-loop safety:**
 %[text] - If your `while` condition never becomes false, the loop will run forever.
 %[text] - To stop a stuck loop while running:
-%[text]   - Windows: `Ctrl + C`
-%[text]   - Mac: `Command + .`
+%[text] -  - Windows: `Ctrl + C`
+%[text] -  - Mac: `Command + .` \
+%[text] **Enter the while-loop by checking the condition:**
+%[text] - if false, skip the entire loop
+%[text] - if true, execute the statement block, then check the condition again. 
+%[text] - If the condition is still true, execute the statement block again. Otherwise, exit the while-loop \
 % Example: eat buffet
 full_stomach = 25; % 25 plates
 eaten = 0;
@@ -397,22 +399,18 @@ while (eaten < full_stomach)
     eaten = eaten + plates;
 
 end
-disp(['You are finally full and ate ', num2str(eaten), ' plates!']); %[output:1f28de7f]
+disp(['You are finally full and ate ', num2str(eaten), ' plates!']); %[output:816daa28]
 %%
-%[text] Enter the while-loop by checking the condition:
-%[text] - if false, skip the entire loop
-%[text] - if true, execute the statement block, then check the condition again. If the condition is still true, execute the statement block again. Otherwise, exit the while-loop \
-%%
-%[text] ### Example: Go through vector elements via index i
+%[text] #### Example 1: Go through vector elements via index i and access
 vec = randi([-5, 5], 1, 9);
 
 i = 1;                  % Start by assigning initial index i = 1
 while i <= length(vec)  % Won't stop until i is greater than length() %[output:group:744428fc]
-    disp(vec(i));       % Do something to each entry %[output:36945b74]
+    disp(vec(i));       % Do something to each entry %[output:2e3ba7be]
     i = i + 1;          % Increase i by 1 so it can go to next index and finally exit by exceeding length 
 end %[output:group:744428fc]
 %%
-%[text] ### Example: Go through vector elements and update
+%[text] #### Example 2: Go through vector elements and update
 xnew = 1:10;
 fxnew = zeros(1, length(xnew));
 
@@ -438,40 +436,42 @@ end
 %[text] - At j=11, 11\<11 is false
 %[text] - Exit loop \
 %%
-%[text] ### Error-checking: Keep asking until user gives a valid number
+%[text] #### Example 3: Error-checking until user gives a valid number
 inputYear = input('Enter a year between 2000 and 2050: ');
-while (inputYear < 2000 || inputYear > 2050)
+while (inputYear < 2000 || inputYear > 2050) % the opposite of valid range 
     inputYear = input('Enter a year between 2000 and 2050: ');
 end
 %%
-%[text] ### More Error-checking Patterns
-%[text] A common strategy is to write the loop condition as a **failure condition** (undesired cases).
-%[text] The loop keeps repeating while the input is invalid.
+%[text] #### Example 4: Input inside loop to record preference of running again
+run_choice = 'y';
+while run_choice ~= 'n' %[output:group:615e14c1]
+    disp('You finished some tasks here!'); %[output:6e04d535]
+    run_choice = input("Do you want to run again, y or n: ", 's');
+end %[output:group:615e14c1]
 %%
-%[text] Example 1 (range check): Desired $1 \le x \le 5$
-%[text] Failure condition (undesired): $(x < 1) || (x > 5)$
-x_range = input('Enter a number from 1 to 5: ');
-while (x_range < 1) || (x_range > 5)
-    x_range = input('Error: enter a number from 1 to 5: ');
+%[text] ## More Error-checking Patterns
+%[text] A common strategy is to write the loop condition as a **failure condition** (invalid cases). The loop keeps repeating while the input is invalid.
+%%
+%[text] Example 1 (range check): Desired $&dollar&;1 \\le x \\le &dollar&;4$
+%[text] Failure condition (undesired): $&dollar&;(x \< 1) || (x \> 4)&dollar&;$
+x_range = input('Enter a number from 1 to 4: ');
+while (x_range < 1) || (x_range > 4)
+    x_range = input('Enter a number from 1 to 4: ');
 end
 %%
 %[text] Example 2 (specific values): only accept 'y' or 'n'
-yn = input("Enter 'y' or 'n': ", 's');
-while ~(strcmp(yn, 'y') || strcmp(yn, 'n'))
-    yn = input("Error: enter only 'y' or 'n': ", 's');
+%[text] \[Failure condition (invalid): usr\_str ~= ‘y’ && usr\_str ~= ‘n’\]
+usr_str = input("Enter only y or n: ", 's');
+while (usr_str ~= 'y' && usr_str ~= 'n')
+    usr_str = input("Enter only y or n: ", 's');
 end
 %%
-%[text] Example 3 (menu choice): only accept '1' or '2'
-choice = input("Enter '1' or '2': ", 's');
-while ~(strcmp(choice, '1') || strcmp(choice, '2'))
-    choice = input("Error: enter only '1' or '2': ", 's');
-end
-%%
-%[text] Example 4 (filename validation): only accept an existing filename
-%[text] Tip: `exist(filename, 'file')` returns 2 when the file exists.
-filename = input('Enter a filename that exists (e.g., sample.csv): ', 's');
-while exist(filename, 'file') ~= 2
-    filename = input('Error: file not found. Enter a filename that exists: ', 's');
+%[text] Example 3 (filename validation): only accept an existing filename
+%[text] \[Failure condition (invalid): file doesn’t exist\]
+%[text] Tip: `exist(filename, 'file')` returns 0 when the file doesn't exists.
+filename = input('Enter a filename that exists: ', 's');
+while exist(filename, 'file') == 0
+    filename = input('Enter a filename that exists: ', 's');
 end
 %%
 %[text] ## For-loop
@@ -489,12 +489,12 @@ end
 %[text]          statement block
 %[text] `end`
 %%
-%[text] ### Example: Use for-loop to go through vector elements
+%[text] #### Example 1: Use for-loop to go through vector elements
 for x = [0, pi/4, pi/2, 3*pi/4, pi] %[output:group:955790b4]
-    disp(sin(x)); %[output:816daa28]
+    disp(sin(x)); %[output:4049f016]
 end %[output:group:955790b4]
 %%
-%[text] ### Example: Use for-loop to update vector elements
+%[text] #### Example 2: Use for-loop to update vector elements
 %%
 vec_initial = ones(1, length(xnew));
 
@@ -515,38 +515,39 @@ end
 %[text] - The last iteration when i = 9, vec\_initial(9) = 0.01 \* 9 = 0.09
 %[text] - \[0.01 1 0.03 1 0.05 1 0.07 1 0.09 1\] \
 %%
-%[text] ### Summation ($\sum$) and Product ($\prod$) Examples
+%[text] #### Example 3: Summation ($\\sum$) and Product ($\\prod$)
 %[text] Summation form:
-%[text] $$S = \sum_{i=1}^{n} a_i$$
-%[text] Product form:
-%[text] $$P = \prod_{i=1}^{n} a_i$$
-%%
-%[text] Example: sum and product of a vector
+%[text] $S = \\sum\_{i=1}^{n} a\_i$
+%[text] $$$$Product form:
+%[text] $P = \\prod\_{i=1}^{n} b\_i$$$
 a = [2, 4, 6, 8];
 
 S = 0;
 for i = 1:length(a)
     S = S + a(i);
 end
-S
-S_builtin = sum(a)
+
+S_builtin = sum(a);
 %%
+b = [1, 3, 5, 7];
+
 P = 1;
-for i = 1:length(a)
-    P = P * a(i);
+for i = 1:length(b)
+    P = P * b(i);
 end
-P
-P_builtin = prod(a)
+
+P_builtin = prod(b);
 %%
-%[text] Example: compute $\sum_{i=1}^{n} i^2$ using a for-loop
-n = 5;
-S_sq = 0;
+%[text] #### Example 4: compute $&dollar&;\\sum\_{i=1}^{n} \\frac{1}{i}&dollar&;$ using a for-loop
+n = 5000;
+S_rep = 0;
 for i = 1:n
-    S_sq = S_sq + i^2;
+    S_rep = S_rep + 1/i;
 end
-S_sq
+S_rep %[output:2fcf7847]
+disp(log(n+0.5)+0.5772) %[output:1b72dba9]
 %%
-%[text] ### Example: Use for-loop to manually find the extreme in a vector
+%[text] #### Example 5: Use for-loop to manually find the extreme in a vector
 % Try: for-loop to find largest number
 vec_unsorted = randi([-50, 50], 1, 20);
 largest = vec_unsorted(1);
@@ -557,9 +558,30 @@ for i = 2:length(vec_unsorted)
 end
 disp(largest); %[output:2bc1e25f]
 %%
+%[text] ## Loops: When to Use (and When Not to Use)
+%[text] Loops let you repeat the same block of code multiple times.
+%[text:table]
+%[text] | Use loops when... | Don't use loops when... |
+%[text] | --- | --- |
+%[text] | You need error checking (keep asking until input is valid). | You only need to run something once. |
+%[text] | You are doing a summation/product (e.g., $\\sum$ or $\\prod$). | You're implementing branching logic (use `if-else` / `switch`). |
+%[text] | You need to update/manipulate elements in an array/matrix repeatedly. | A MATLAB built-in function already solves it cleanly. |
+%[text] | You would otherwise copy/paste the same lines many times. |  |
+%[text:table]
+%%
+%[text] ## For-loop vs While-loop
+%[text:table]
+%[text] | For-loop | While-loop |
+%[text] | --- | --- |
+%[text] | Use when you know how many iterations (or the range) in advance. | Use when you don't know how many iterations in advance. |
+%[text] | Great for iterating through ranges, arrays, and matrices. | Great for user input + error checking. |
+%[text] | Condition is usually a range like `1:10` or `1:2:n`. | Condition is usually a logical test like `(x < 1) || (x > 5)`. |
+%[text] | Error checking is possible, but often less natural than `while`. | Natural choice for error checking (repeat until valid). |
+%[text:table]
+%%
 %[text] ## Challenging Practices
 %%
-%[text] Try to use a for-loop to find the average of all vector entries whose value is \>25
+%[text] (1) Try to use a for-loop to find the average of all vector entries whose value is \>25
 currentSum = 0;
 currentCount = 0;
 loopIndex = 1;
@@ -574,7 +596,7 @@ end
 
 avg_of_25_more = currentSum / currentCount %[output:7e25f751]
 %%
-%[text] Try to find the largest square number in the range \[2000, 2050\]
+%[text] (2) Try to find the largest square number in the range \[2000, 2050\]
 %[text] Hints: initialize result = 0
 %[text] Start from x=2000, if 2000 is a square number, update result = 2000
 %[text] Increase x by 1, if 2001 is a square number, update result = 2001
@@ -635,7 +657,7 @@ disp(currentlargest) %[output:17d824e3]
 a = 1;
 b = 7;
 num = 0;
-initial = 199 %[output:group:529adeaf] %[output:40d3c4e9]
+initial = 199
 while a <= b
     if mod(initial, 2) == 1
         initial = (initial - 1) / 2;
@@ -643,10 +665,10 @@ while a <= b
         initial = initial / 2;
     end
     num = num + 1;
-    disp(['Division times: ', num2str(num)]); %[output:3f19902e]
+    disp(['Division times: ', num2str(num)]);
     a = a + 1;
     b = b - 1;
-end %[output:group:529adeaf] %[output:88961640] %[output:7593a029]
+end
 
 %[appendix]{"version":"1.0"}
 %---
@@ -714,74 +736,101 @@ end %[output:group:529adeaf] %[output:88961640] %[output:7593a029]
 %   data: {"dataType":"text","outputData":{"text":"    \"The value of A is: \"    \"5.145\"\n\n","truncated":false}}
 %---
 %[output:35709e50]
-%   data: {"dataType":"textualVariable","outputData":{"name":"r","value":"0.1781"}}
+%   data: {"dataType":"textualVariable","outputData":{"name":"r","value":"0.8147"}}
 %---
 %[output:179ab1f8]
-%   data: {"dataType":"matrix","outputData":{"columns":5,"name":"rand_vec","rows":1,"type":"double","value":[["0.3596","0.0567","0.5219","0.3358","0.1757"]]}}
+%   data: {"dataType":"matrix","outputData":{"columns":5,"name":"rand_vec","rows":1,"type":"double","value":[["0.9058","0.1270","0.9134","0.6324","0.0975"]]}}
 %---
 %[output:5f9d57e1]
-%   data: {"dataType":"matrix","outputData":{"columns":2,"name":"rand_mat","rows":3,"type":"double","value":[["0.2089","0.4685"],["0.9052","0.9121"],["0.6754","0.1040"]]}}
+%   data: {"dataType":"matrix","outputData":{"columns":2,"name":"rand_mat","rows":3,"type":"double","value":[["0.2785","0.9649"],["0.5469","0.1576"],["0.9575","0.9706"]]}}
 %---
 %[output:245a04e0]
-%   data: {"dataType":"textualVariable","outputData":{"name":"randi_num","value":"75"}}
+%   data: {"dataType":"textualVariable","outputData":{"name":"randi_num","value":"96"}}
 %---
 %[output:4ff951c2]
-%   data: {"dataType":"matrix","outputData":{"columns":5,"name":"randi_num_vec","rows":1,"type":"double","value":[["74","57","19","60","30"]]}}
+%   data: {"dataType":"matrix","outputData":{"columns":5,"name":"randi_num_vec","rows":1,"type":"double","value":[["49","81","15","43","92"]]}}
 %---
 %[output:65feb2e4]
-%   data: {"dataType":"matrix","outputData":{"columns":3,"name":"randi_num_mat","rows":3,"type":"double","value":[["14","8","45"],["22","25","2"],["90","6","90"]]}}
+%   data: {"dataType":"matrix","outputData":{"columns":3,"name":"randi_num_mat","rows":3,"type":"double","value":[["80","4","68"],["96","85","76"],["66","94","75"]]}}
 %---
 %[output:1afd45a9]
-%   data: {"dataType":"matrix","outputData":{"columns":8,"name":"randi_range_mat","rows":1,"type":"double","value":[["-5","-8","-3","1","-8","15","-2","-3"]]}}
+%   data: {"dataType":"matrix","outputData":{"columns":8,"name":"randi_range_mat","rows":1,"type":"double","value":[["0","7","-6","8","-10","-3","-9","-8"]]}}
 %---
 %[output:5a51928b]
-%   data: {"dataType":"matrix","outputData":{"columns":55,"name":"grades","rows":1,"type":"double","value":[["62","72","61","80","91","85","63","63","91","97","81","64","93","73","72","90","60","61","87","84","81","89","88","92","71","88","82","76","62","91"]]}}
+%   data: {"dataType":"matrix","outputData":{"columns":55,"name":"grades","rows":1,"type":"double","value":[["93","88","73","98","61","77","75","91","92","67","80","78","86","89","90","71","87","86","66","64","80","99","73","83","69","90","70","80","88","96"]]}}
+%---
+%[output:738ab64d]
+%   data: {"dataType":"text","outputData":{"text":"Average grade: 81.1273\n","truncated":false}}
+%---
+%[output:7ecfef15]
+%   data: {"dataType":"text","outputData":{"text":"Median grade: 82\n","truncated":false}}
+%---
+%[output:4b9abc7a]
+%   data: {"dataType":"text","outputData":{"text":"Mode grade: 70\n","truncated":false}}
+%---
+%[output:3427d988]
+%   data: {"dataType":"text","outputData":{"text":"Standard deviation: 10.7463\n","truncated":false}}
+%---
+%[output:06c5d4dd]
+%   data: {"dataType":"text","outputData":{"text":"Variance: 115.4835\n","truncated":false}}
+%---
+%[output:98723856]
+%   data: {"dataType":"text","outputData":{"text":"Range of grades: 38\n","truncated":false}}
+%---
+%[output:93fb2437]
+%   data: {"dataType":"text","outputData":{"text":"25th percentile grade: 71\n","truncated":false}}
+%---
+%[output:7026a55b]
+%   data: {"dataType":"text","outputData":{"text":"75th percentile grade: 90\n","truncated":false}}
 %---
 %[output:649a632c]
-%   data: {"dataType":"text","outputData":{"text":"The element you inquired at Row 2 Column 3 of file sample.csv is: 0.77193\n","truncated":false}}
+%   data: {"dataType":"text","outputData":{"text":"     2\n\n","truncated":false}}
 %---
 %[output:038ce7bf]
-%   data: {"dataType":"text","outputData":{"text":"a is not greater than b\n","truncated":false}}
+%   data: {"dataType":"text","outputData":{"text":"The element you inquired at Row 1 Column 2 of file sample.txt is: 0.33712\n","truncated":false}}
 %---
 %[output:69a9236d]
-%   data: {"dataType":"text","outputData":{"text":"a is less than b\n","truncated":false}}
+%   data: {"dataType":"text","outputData":{"text":"     0\n\n","truncated":false}}
 %---
 %[output:26da71f8]
-%   data: {"dataType":"text","outputData":{"text":"The temperature is moderate.\n","truncated":false}}
+%   data: {"dataType":"text","outputData":{"text":"a is not greater than b\n","truncated":false}}
 %---
 %[output:8f8708bb]
-%   data: {"dataType":"text","outputData":{"text":"The temperature is moderate.\n","truncated":false}}
+%   data: {"dataType":"text","outputData":{"text":"a is less than b\n","truncated":false}}
 %---
 %[output:5bb3ddb2]
-%   data: {"dataType":"text","outputData":{"text":"Weekends\n","truncated":false}}
+%   data: {"dataType":"text","outputData":{"text":"The temperature is moderate.\n","truncated":false}}
 %---
 %[output:1f28de7f]
-%   data: {"dataType":"text","outputData":{"text":"You are finally full and ate 28 plates!\n","truncated":false}}
+%   data: {"dataType":"text","outputData":{"text":"The temperature is moderate.\n","truncated":false}}
 %---
 %[output:36945b74]
-%   data: {"dataType":"text","outputData":{"text":"    -3\n\n    -3\n\n     4\n\n     2\n\n     1\n\n    -3\n\n    -3\n\n    -5\n\n     5\n\n","truncated":false}}
+%   data: {"dataType":"text","outputData":{"text":"Weekends\n","truncated":false}}
 %---
 %[output:816daa28]
+%   data: {"dataType":"text","outputData":{"text":"You are finally full and ate 26 plates!\n","truncated":false}}
+%---
+%[output:2e3ba7be]
+%   data: {"dataType":"text","outputData":{"text":"    -5\n\n    -3\n\n     5\n\n    -4\n\n     4\n\n     0\n\n     5\n\n    -5\n\n    -1\n\n","truncated":false}}
+%---
+%[output:6e04d535]
+%   data: {"dataType":"text","outputData":{"text":"You finished some tasks here!\nYou finished some tasks here!\n","truncated":false}}
+%---
+%[output:4049f016]
 %   data: {"dataType":"text","outputData":{"text":"     0\n\n    0.7071\n\n     1\n\n    0.7071\n\n   1.2246e-16\n\n","truncated":false}}
 %---
+%[output:2fcf7847]
+%   data: {"dataType":"textualVariable","outputData":{"name":"S_rep","value":"9.0945"}}
+%---
+%[output:1b72dba9]
+%   data: {"dataType":"text","outputData":{"text":"    9.0945\n\n","truncated":false}}
+%---
 %[output:2bc1e25f]
-%   data: {"dataType":"text","outputData":{"text":"    28\n\n","truncated":false}}
+%   data: {"dataType":"text","outputData":{"text":"    47\n\n","truncated":false}}
 %---
 %[output:7e25f751]
-%   data: {"dataType":"textualVariable","outputData":{"name":"avg_of_25_more","value":"28"}}
+%   data: {"dataType":"textualVariable","outputData":{"name":"avg_of_25_more","value":"36"}}
 %---
 %[output:17d824e3]
 %   data: {"dataType":"text","outputData":{"text":"        2025\n\n","truncated":false}}
-%---
-%[output:40d3c4e9]
-%   data: {"dataType":"textualVariable","outputData":{"name":"initial","value":"199"}}
-%---
-%[output:3f19902e]
-%   data: {"dataType":"text","outputData":{"text":"Division times: 1\nDivision times: 2\nDivision times: 3\nDivision times: 4\n","truncated":false}}
-%---
-%[output:88961640]
-%   data: {"dataType":"textualVariable","outputData":{"name":"last","value":"12"}}
-%---
-%[output:7593a029]
-%   data: {"dataType":"text","outputData":{"text":"Done\n","truncated":false}}
 %---
