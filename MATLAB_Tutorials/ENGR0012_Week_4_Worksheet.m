@@ -1,16 +1,20 @@
-%[text] # Week 4
+%[text] # Week 4 Worksheet (Interactive, Optional to Try and Study)
+%[text] The worksheet is a comprehensive summary of the lecture material, organized into Live Script sections. Concise comments are added where needed to clarify difficult topics. You can request to access the solution or simply ask to address your concerns.
 %%
-%[text] ## Different Loading Practices, But Not Recommended
+%[text] ## File Input/Output and Data Management
+%%
+%[text] ### Different Loading Practices (Not Recommended)
+%[text] While the following methods work, they are not recommended due to unclear variable naming.
 R = randi(15, 3, 4);
 save("datafile.txt", "R", "-ascii")
 
-% Some working but not recommended loading practice
-
+% Some working but not recommended loading practice:
 % Default variable name after loading
 load("datafile.txt");  % It creates a variable named 'datafile'
 load datafile.txt;     % It creates a variable named 'datafile'
 %%
-% Review: Error checking when loading files
+%[text] ### Recommended: Error Checking When Loading Files
+%[text] Best practice is to use error checking with `exist()` to ensure the file exists before loading.
 filename = input('Please enter file name: ', 's');
 while exist(filename, 'file') == 0
     filename = input('Please enter file name: ', 's');
@@ -18,8 +22,11 @@ end
 % Alternatively, hard-code: filename = 'datafile.txt'
 matrix = load(filename);
 %%
-%[text] ## Challenging Practices: Loops
-%[text] (1) Try to use a for-loop to find the average of all vector entries whose value is \> 25
+%[text] ## Loops: Challenging Practices
+%[text] Apply loops to solve more complex problems. We'll practice finding specific values and computations.
+%%
+%[text] #### Example 1: Find the Average of Values Greater than a Threshold
+%[text] Find the average of all vector entries whose value is greater than 25.
 vec2 = randi([-50, 50], 1, 20);
 currentSum = 0;
 currentCount = 0;
@@ -34,14 +41,16 @@ while (loopIndex <= length(vec2))
 end
 
 avg_of_25_more = currentSum / currentCount;
-%[text] (2) Try to find the largest square number in the range \[2000, 2050\]
-% Note: A number is a perfect square if its sqrt equals the floor of its sqrt
-% 1. currentlargest = 0;
-% 2. for var = 2000, 2001, ..., 2050
-% 3. Check if var is a perfect square
-% 4. Update currentlargest if true
-% 5. End loop and display currentlargest
-
+%%
+%[text] #### Example 2: Find the Largest Perfect Square in a Range
+%[text] Find the largest perfect square number in the range [2000, 2050].
+%[text] A number is a perfect square if sqrt(var) equals floor(sqrt(var)).
+%[text] Algorithm:
+%[text] 1. Initialize currentlargest = 0
+%[text] 2. For var = 2000, 2001, ..., 2050
+%[text] 3. Check if var is a perfect square
+%[text] 4. Update currentlargest if true
+%[text] 5. End loop and display currentlargest
 currentlargest = 0;
 for var = 2000:2050
     if sqrt(var) == floor(sqrt(var))
@@ -51,9 +60,11 @@ end
 disp(currentlargest) %[output:187d43c3]
 %%
 %[text] ## Create and Call Functions
-%[text] Functions are useful tools to perform common tasks without recreating code.
+%[text] Functions are useful tools to perform common tasks without recreating code. They encapsulate logic and make code reusable.
 %[text] There are four types of functions based on inputs and outputs.
+%%
 %[text] ### Function Types Summary Table
+%[text] Overview of all function types and their usage patterns:
 %[text:table]{"columnWidths":[-1,-1,-1,220,169,-1]}
 %[text] | Type | Inputs | Outputs | Function Signature (First Line) | Function Call In Main | Function Body Example |
 %[text] | --- | --- | --- | --- | --- | --- |
@@ -64,7 +75,9 @@ disp(currentlargest) %[output:187d43c3]
 %[text:table]
 %%
 %[text] ### Detailed Examples For Each Function Type:
-%[text] #### Type 1:
+%%
+%[text] #### Type 1: No Inputs and No Outputs
+%[text] The simplest function type. Call the function and it performs an action.
 % Call the function:
 display_welcome() %[output:31148446]
 % Type 1: No inputs and no outputs
@@ -73,10 +86,11 @@ function display_welcome()
     disp('This is a simple function with no inputs or outputs.');
 end
 %%
-%[text] #### Type 2:
+%[text] #### Type 2: No Inputs but Has Outputs
+%[text] Create and return data without requiring input parameters.
 % Call the function:
 [num1, num2, num3] = generate_values();
-% Try disp(x); disp(y); disp(z) here
+% Try disp(num1); disp(num2); disp(num3) here to see the returned values
 
 % Type 2: No inputs and have outputs
 % This function creates three variables and returns them
@@ -86,7 +100,8 @@ function [x, y, z] = generate_values()
     z = 15;
 end
 %%
-%[text] #### Type 3:
+%[text] #### Type 3: Has Inputs but No Outputs
+%[text] Process data and display results without returning values.
 % Call the function:
 display_triangle(4, 6) %[output:2608ae5c]
 % Type 3: Have inputs and no outputs
@@ -96,7 +111,8 @@ function display_triangle(base, height)
     disp(['Triangle Area: ', num2str(area)]);
 end
 %%
-%[text] #### Type 4:
+%[text] #### Type 4: Has Both Inputs and Outputs
+%[text] The most versatile function type. Process input data and return computed results.
 % Call the function:
 [hyp, tri_area] = calculate_triangle(3, 4);
 
@@ -108,9 +124,8 @@ function [c, area] = calculate_triangle(a, b)
 end
 %%
 %[text] #### Practice: Calling Functions and Observing Variable Names
-%[text] Important: Variables in functions are LOCAL to that function. Only output variables appear in the main workspace
-% Example: Calling Type 4 function with different variable names
-% Notice: Function uses (a, b) but we pass values from different variables
+%[text] Important: Variables in functions are LOCAL to that function. Only output variables appear in the main workspace.
+%[text] Example: Calling Type 4 function with different variable names
 side1 = 3; 
 side2 = 4;
 [h, t] = calculate_triangle(side1, side2);
@@ -120,7 +135,8 @@ side2 = 4;
 %%
 %[text] ## Spotlight: Variable Names in Main Script vs. Function
 %[text] One major advantage of functions is that variable names in the function do NOT need to match variable names in the main script. Variables are passed by POSITION, not by NAME.
-%[text] #### KEY CONCEPT
+%%
+%[text] #### KEY CONCEPT: Position-Based Parameter Passing
 %[text] Variables are matched by POSITION, not by NAME. When you call a function:
 %[text] 1. Input values are passed in order to function parameters
 %[text] 2. Function processes the data with its own variable names
@@ -128,13 +144,13 @@ side2 = 4;
 %[text] 4. ONLY the output variables appear in the workspace \
 %%
 %[text] ### Example 1: Simple Variable Name Change
-%[text] In this example, we have different variable names in the main vs. the function
+%[text] In this example, we have different variable names in the main vs. the function.
 % MAIN SCRIPT:
 side3 = 3;
 side4 = 4;
 [hypotenuse, s] = calculate_triangle(side3, side4);
 
-% FUNCTION DEFINITION SAME AS ABOVE
+% Note: FUNCTION DEFINITION is same as above (Type 4 function)
 %%
 %[text] WHAT HAPPENS:
 %[text] - `side3` (value 3) is passed to parameter 'a' (position 1)
@@ -148,6 +164,7 @@ side4 = 4;
 %[text] - `a, b, c, area` (these are local to the function) \
 %%
 %[text] ### Example 2: More Complex Variable Name Changes
+
 %[text] All variables change names between main and function
 % MAIN SCRIPT:
 x = 5;
@@ -176,6 +193,7 @@ end
 %[text] - DOES NOT contain: `in1, in2, in3, out_a, out_b, out_c` \
 %%
 %[text] ### Example 3: Variable Passing/Returning Value By Position
+%[text] ### Example 3: Variable Passing and Returning By Position
 % MAIN SCRIPT:
 a = 10;
 b = 20;
@@ -191,8 +209,8 @@ function n = my_function(m, n)
 end
 
 % AFTER CALLING FUNCTION:
-% Workspace: [ a=10, b=30]
-% NOTE: 'm', 'n' are NOT in workspace!
+% Workspace: [a=10, b=30]
+% NOTE: 'm' and 'n' are NOT in workspace!
 %%
 %[text] #### POSITION-BY-POSITION MAPPING:
 %[text] INPUT SIDE (when calling function):
@@ -201,28 +219,36 @@ end
 %[text] OUTPUT SIDE (returning from function):
 %[text] - Position 1: n (value 30) → returns to b \
 %[text] WORKSPACE AFTER CALL:
-%[text] - Contains: a`=10, b=30` (no longer 20)
-%[text] - DOES NOT contain: n`, m` \
+%[text] - Contains: a=10, b=30 (b changed from 20 to 30)
+%[text] - DOES NOT contain: n, m \
 %%
 %[text] ## Solving Systems of Linear Equations
+%[text] Learn to solve systems of equations using matrix algebra and MATLAB functions.
+%%
 %[text] ### Basic Concept
-%[text] System of equations in matrix form: Ax = b
-%[text] Where A = coefficient matrix, x = unknowns, b = constants
-%[text] Example system:
+%[text] Express a system of equations in matrix form: Ax = b
+%[text] - A = coefficient matrix
+%[text] - x = unknowns (what we're solving for)
+%[text] - b = constants (right-hand side)
+%%
+%[text] #### Example System:
 %[text] x + 2y + z = 3
 %[text] 4x - y + 3z = 7
 %[text] 3x + 5y - 3z = 8
-%[text] Matrix form:
-%[text] A = \[1  2  1\]      b = \[3\]
-%[text]       \[4 -1  3\]            \[7\]
-%[text]       \[3  5 -3\]            \[8\]
 %%
-%[text] ### Simple Approach (for specific data file)
+%[text] Matrix form:
+%[text] A = [1  2  1]      b = [3]
+%[text]     [4 -1  3]          [7]
+%[text]     [3  5 -3]          [8]
+%%
+%[text] ### Simple Approach (for Specific Data File)
+%[text] When you have a hardcoded data file path and know its structure:
 matrix_data = load('datafile.txt'); % Load data from file
 A_hardcoded = matrix_data(1:3, 1:3); % Extract coefficient matrix A (first 3 columns)
 b_hardcoded = matrix_data(1:3, 4);   % Extract right-hand side vector b (last column)
 %%
-%[text] ### Flexible Approach (handles different data files and sizes)
+%[text] ### Flexible Approach (Handles Different Data Files and Sizes)
+%[text] More robust solution that works with any properly formatted data file.
 % Step 1: Ask user to enter filename and check if it exists
 filename = input('Please enter the name of the data file: ', 's');
 while exist(filename, 'file') == 0
@@ -240,9 +266,9 @@ A = matrix_data(:, 1:(cols - 1));     % Extract matrix A
 b = matrix_data(:, cols);              % Extract vector b
 %%
 %[text] ### Solving Ax = b with Error Checking
-%[text] Important conditions:
+%[text] Before solving, we must verify two important conditions:
 %[text] 1. Matrix A must be square (number of rows = number of columns)
-%[text] 2. Determinant of A must not equal zero (det(A) ≠ 0) \
+%[text] 2. Determinant of A must not equal zero (det(A) ≠ 0) for a unique solution \
 % Check if A is square
 [rows_A, cols_A] = size(A);
 if rows_A ~= cols_A %[output:group:228f93e3]
@@ -260,7 +286,11 @@ else
 end %[output:group:228f93e3]
 %%
 %[text] ## Linear-Algebra Related Functions
-%[text] Essential functions for solving systems of equations and matrix operations:
+%[text] Essential functions for solving systems of equations and matrix operations.
+%[text] Choose the right function based on your needs:
+%%
+%[text] ### Linear Algebra Functions Reference Table
+%[text] Overview of essential functions and their usage patterns:
 %[text:table]
 %[text] | Useful Function | Keyword | What Does It Do? | Example |
 %[text] | --- | --- | --- | --- |
@@ -268,11 +298,14 @@ end %[output:group:228f93e3]
 %[text] | Determinant | `det(A)` | Returns scalar value; det(A)=0 means singular matrix | <p>`d = det(A);`</p><p>`if d==0`</p><p> `disp('singular')`</p><p>`end`</p> |
 %[text] | Inverse | `inv(A)` or `A^(-1)` | Returns inverse of square matrix A | <p>`A_inv = inv(A)` or </p><p>`A_inv = A^(-1)`</p> |
 %[text] | Solve Ax=b | `x = A\b` or `x = inv(A)*b` | Solves system of equations | `x = A\b` is more efficient than `inv(A)*b` |
-%[text] | Matrix Size | `size(A)` | Returns \[rows, cols\] dimensions | `[m, n] = size(A)` extracts dimensions |
+%[text] | Matrix Size | `size(A)` | Returns [rows, cols] dimensions | `[m, n] = size(A)` extracts dimensions |
 %[text:table]
 %%
-%[text] ## Solve a Trace Problem
-%[text] #### **3b Answer:**
+%[text] ## Solving Trace Problems
+%[text] Practice with detailed trace execution and variable tracking.
+%%
+%[text] ### Trace Example 3b: Loop Division Problem
+%[text] #### **Answer:**
 %[text:table]{"ignoreHeader":true}
 %[text] | initial=199 |
 %[text] | --- |
@@ -283,9 +316,10 @@ end %[output:group:228f93e3]
 %[text] | last=12 |
 %[text] | Done |
 %[text:table]
-%[text] #### **3b Scratch Work:**
-%[text] Track all variables' values throughout the loop execution:
-%[text] (Note: This is only for your understanding, not a solution)
+%%
+%[text] #### **Scratch Work:**
+%[text] Track all variables' values throughout the loop execution.
+%[text] (This is for your understanding, showing how variables change each iteration)
 %[text:table]{"ignoreHeader":true}
 %[text] | Change of a: | 1 | 2 | 3 | 4 | 5 |
 %[text] | --- | --- | --- | --- | --- | --- |
@@ -293,10 +327,13 @@ end %[output:group:228f93e3]
 %[text] | Change of num: | 0 | 1 | 2 | 3 | 4 |
 %[text] | Change of initial: | 199 | 99 | 49 | 24 | 12 |
 %[text:table]
-%[text]  
-% Call one main function
+%%
+%[text] ### Running All Trace Examples
+%[text] Execute all practice traces to verify your understanding:
+% Call main function to run all traces
 run_all_traces() %[output:1b7e1e78] %[output:59a145d0] %[output:5a59717e] %[output:161ebc96] %[output:0cc7e694] %[output:0f93bc63] %[output:8738d257] %[output:66e9fc0e] %[output:80c722d5] %[output:806d826c] %[output:0273da4a] %[output:3d50c9d2] %[output:9e0130ae] %[output:32f6339b] %[output:16065f20] %[output:1e62e70d] %[output:9f4c1f30]
 function run_all_traces()
+%[text] #### Trace Group 1: Loop Index and Vector Access
 disp('____________________________')
 disp('Running trace_1a:')
 disp(repmat(char([32, 773]), 1, 28))
@@ -312,6 +349,7 @@ disp('Running trace_1c:')
 disp(repmat(char([32, 773]), 1, 28))
 trace_1c()
 
+%[text] #### Trace Group 2: Conditional Logic and Loops
 disp('____________________________')
 disp('Running trace_2a:')
 disp(repmat(char([32, 773]), 1, 28))
@@ -322,6 +360,7 @@ disp('Running trace_2b:')
 disp(repmat(char([32, 773]), 1, 28))
 trace_2b()
 
+%[text] #### Trace Group 3: Complex Loop Interactions and Nested Loops
 disp('____________________________')
 disp('Running trace_3a:')
 disp(repmat(char([32, 773]), 1, 28))
