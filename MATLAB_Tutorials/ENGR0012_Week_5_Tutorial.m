@@ -85,7 +85,6 @@ end %[output:144737ea] %[output:129ad7e9]
 
 [p1, p2] = get_values; % calling function_1 to get p1, p2 %[output:82f30226]
 choice = user_menu;    % calling function_2 to get choice %[output:0fc3f7c8]
-
 % Switch case to call the appropriate function
 switch choice %[output:group:488e45de]
     case 1
