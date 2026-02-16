@@ -6,7 +6,7 @@
 %[text] ### Different Loading Practices (Not Recommended)
 %[text] While the following methods work, they are not recommended due to unclear variable naming.
 R = randi(15, 3, 4);
-save("datafile.txt", "R", "-ascii")
+save("datafile.txt", "R", "-ascii") %MARKED
 
 % Some working but not recommended loading practice:
 % Default variable name after loading
@@ -20,7 +20,7 @@ while exist(filename, 'file') == 0
     filename = input('Please enter file name: ', 's');
 end
 % Alternatively, hard-code: filename = 'datafile.txt'
-matrix = load(filename);
+matrix = load(filename); %MARKED
 %%
 %[text] ## Loops: Challenging Practices
 %[text] Apply loops to solve more complex problems. We'll practice finding specific values and computations.
@@ -40,7 +40,7 @@ while (loopIndex <= length(vec2))
     loopIndex = loopIndex + 1;
 end
 
-avg_of_25_more = currentSum / currentCount;
+avg_of_25_more = currentSum / currentCount; %MARKED
 %%
 %[text] #### Example 2: Find the Largest Perfect Square in a Range
 %[text] Find the largest perfect square number in the range \[2000, 2050\].
@@ -56,7 +56,7 @@ for var = 2000:2050
     if sqrt(var) == floor(sqrt(var))
         currentlargest = var;
     end
-end
+end %MARKED
 disp(currentlargest) %[output:187d43c3]
 %%
 %[text] ## Create and Call Functions
@@ -79,56 +79,42 @@ disp(currentlargest) %[output:187d43c3]
 %[text] #### Type 1: No Inputs and No Outputs
 %[text] The simplest function type. Call the function and it performs an action.
 % Call the function:
-display_welcome() %[output:31148446]
+% TODO: Call display_welcome() to run the example.
 % Type 1: No inputs and no outputs
-function display_welcome()
-    disp('Welcome to MATLAB Functions!');
-    disp('This is a simple function with no inputs or outputs.');
-end
+% TODO: Define function display_welcome() with no inputs or outputs.
+% TODO: Inside, display two welcome lines using disp.
 %%
 %[text] #### Type 2: No Inputs but Has Outputs
 %[text] Create and return data without requiring input parameters.
 % Call the function:
-[num1, num2, num3] = generate_values();
-% Try disp(num1); disp(num2); disp(num3) here to see the returned values
+% TODO: Call generate_values() and capture three outputs.
+% TODO: Optionally display the returned values with disp.
 
 % Type 2: No inputs and have outputs
-% This function creates three variables and returns them
-function [x, y, z] = generate_values()
-    x = 5;
-    y = 10;
-    z = 15;
-end
+% TODO: Define function [x, y, z] = generate_values() that sets x=5, y=10, z=15.
 %%
 %[text] #### Type 3: Has Inputs but No Outputs
 %[text] Process data and display results without returning values.
 % Call the function:
-display_triangle(4, 6) %[output:2608ae5c]
+% TODO: Call display_triangle(4, 6) to show the area.
 % Type 3: Have inputs and no outputs
-% This function receives variables and displays their values
-function display_triangle(base, height)
-    area = 0.5 * base * height;
-    disp(['Triangle Area: ', num2str(area)]);
-end
+% TODO: Define function display_triangle(base, height).
+% TODO: Compute area = 0.5 * base * height and display "Triangle Area: <value>".
 %%
 %[text] #### Type 4: Has Both Inputs and Outputs
 %[text] The most versatile function type. Process input data and return computed results.
 % Call the function:
-[hyp, tri_area] = calculate_triangle(3, 4);
+% TODO: Call calculate_triangle(3, 4) and capture hypotenuse and area.
 
 % Type 4: Have inputs and have outputs
-% This function calculates the hypotenuse and area of a right triangle
-function [c, area] = calculate_triangle(a, b)
-    c = sqrt(a ^ 2 + b ^ 2);   % Hypotenuse using Pythagorean theorem
-    area = 0.5 * a * b;        % Area of right triangle
-end
+% TODO: Define function [c, area] = calculate_triangle(a, b).
+% TODO: Compute c = sqrt(a^2 + b^2) and area = 0.5 * a * b.
 %%
 %[text] #### Practice: Calling Functions and Observing Variable Names
 %[text] Important: Variables in functions are LOCAL to that function. Only output variables appear in the main workspace.
 %[text] Example: Calling Type 4 function with different variable names
-side1 = 3; 
-side2 = 4;
-[h, t] = calculate_triangle(side1, side2);
+% TODO: Set side1 and side2 values.
+% TODO: Call calculate_triangle(side1, side2) and store outputs in h and t.
 %[text] What variables are added to workspace after this line?
 %[text] - Answer: Only h and t (the output variables).
 %[text] - The function parameters a, b and local variables c, area are NOT in the workspace \
@@ -146,9 +132,8 @@ side2 = 4;
 %[text] ### Example 1: Simple Variable Name Change
 %[text] In this example, we have different variable names in the main vs. the function.
 % MAIN SCRIPT:
-side3 = 3;
-side4 = 4;
-[hypotenuse, s] = calculate_triangle(side3, side4);
+% TODO: Set side3 and side4 values.
+% TODO: Call calculate_triangle(side3, side4) and store outputs in hypotenuse and s.
 
 % Note: FUNCTION DEFINITION is same as above (Type 4 function)
 %%
@@ -166,17 +151,12 @@ side4 = 4;
 %[text] ### Example 2: More Complex Variable Name Changes
 %[text] All variables change names between main and function
 % MAIN SCRIPT:
-x = 5;
-y = 10;
-z = 3;
-[result1, result2, result3] = math_operation(x, y, z);
+% TODO: Set x, y, z values.
+% TODO: Call math_operation(x, y, z) and store outputs in result1, result2, result3.
 
 % FUNCTION DEFINITION:
-function [out_a, out_b, out_c] = math_operation(in1, in2, in3)
-    out_a = in1 + in2;
-    out_b = in1 * in2;
-    out_c = in3 ^ 2;
-end
+% TODO: Define function [out_a, out_b, out_c] = math_operation(in1, in2, in3).
+% TODO: Compute out_a = in1 + in2, out_b = in1 * in2, out_c = in3^2.
 %%
 %[text] #### POSITION-BY-POSITION MAPPING:
 %[text] INPUT SIDE (when calling function):
@@ -193,18 +173,14 @@ end
 %%
 %[text] ### Example 3: Variable Passing and Returning By Position
 % MAIN SCRIPT:
-a = 10;
-b = 20;
+% TODO: Set a and b values.
 % BEFORE CALLING FUNCTION:
 % Workspace: [a=10, b=20]
 
-b = my_function(b, a); %[output:8ffdbe52]
+% TODO: Call my_function(b, a) and store the returned value in b.
 % FUNCTION:
-function n = my_function(m, n)
-    disp(['m in function is ',num2str(m)])
-    disp(['n in function is ',num2str(n)])
-    n = m + n;
-end
+% TODO: Define function n = my_function(m, n).
+% TODO: Display m and n, then set n = m + n and return it.
 
 % AFTER CALLING FUNCTION:
 % Workspace: [a=10, b=30]
@@ -240,46 +216,33 @@ end
 %%
 %[text] ### Simple Approach (for Specific Data File)
 %[text] When you have a hardcoded data file path and know its structure:
-matrix_data = load('datafile.txt'); % Load data from file
-A_hardcoded = matrix_data(1:3, 1:3); % Extract coefficient matrix A (first 3 columns)
-b_hardcoded = matrix_data(1:3, 4);   % Extract right-hand side vector b (last column)
+% TODO: Load data from 'datafile.txt' into matrix_data.
+% TODO: Extract A_hardcoded as the first 3 columns and first 3 rows.
+% TODO: Extract b_hardcoded as the last column of the first 3 rows.
 %%
 %[text] ### Flexible Approach (Handles Different Data Files and Sizes)
 %[text] More robust solution that works with any properly formatted data file.
 % Step 1: Ask user to enter filename and check if it exists
-filename = input('Please enter the name of the data file: ', 's');
-while exist(filename, 'file') == 0
-    filename = input('Please enter the name of the data file: ', 's');
-end
+% TODO: Prompt for a filename using input(..., 's').
+% TODO: Loop until exist(filename, 'file') returns nonzero.
 
 % Step 2: Load the data and determine dimensions automatically
-matrix_data = load(filename);
-[rows, cols] = size(matrix_data);
+% TODO: Load the file into matrix_data.
+% TODO: Use size(matrix_data) to get rows and cols.
 
 % Step 3: Extract matrix A and vector b
-% Assume last column is b, first (cols-1) columns form A
-A = matrix_data(:, 1:cols-1);          % Extract matrix A
-b = matrix_data(:, cols);              % Extract vector b
+% TODO: Set A to the first (cols-1) columns.
+% TODO: Set b to the last column.
 %%
 %[text] ### Solving Ax = b with Error Checking
 %[text] Before solving, we must verify two important conditions:
 %[text] 1. Matrix A must be square (number of rows = number of columns)
 %[text] 2. Determinant of A must not equal zero (det(A) ≠ 0) for a unique solution \
 % Check if A is square
-[rows_A, cols_A] = size(A);
-if rows_A ~= cols_A %[output:group:228f93e3]
-    disp('Error: Matrix A is not square. Cannot solve this system.');
-else
-    % Check if determinant is zero
-    if det(A) == 0
-        disp('Error: Matrix A is singular. System has no unique solution.');
-    else
-        % Solve for X using inverse method: X = inv(A) * b
-        x = A ^ (-1) * b;
-        disp('Solution:'); %[output:6cff61e8]
-        disp(x); %[output:40284a2c]
-    end
-end %[output:group:228f93e3]
+% TODO: Use size(A) to get rows_A and cols_A.
+% TODO: If rows_A ~= cols_A, display an error about A not being square.
+% TODO: Otherwise, check if det(A) == 0 and display a singular error if so.
+% TODO: If A is square and non-singular, compute x = A^(-1) * b and display it.
 %%
 %[text] ## Linear-Algebra Related Functions
 %[text] Essential functions for solving systems of equations and matrix operations.
@@ -326,7 +289,7 @@ end %[output:group:228f93e3]
 %[text] Execute all practice traces to verify your understanding:
 % Call main function to run all traces
 run_all_traces() %[output:1b7e1e78] %[output:59a145d0] %[output:5a59717e] %[output:161ebc96] %[output:0cc7e694] %[output:0f93bc63] %[output:8738d257] %[output:66e9fc0e] %[output:80c722d5] %[output:806d826c] %[output:0273da4a] %[output:3d50c9d2] %[output:9e0130ae] %[output:32f6339b] %[output:16065f20] %[output:1e62e70d] %[output:9f4c1f30]
-function run_all_traces()
+function run_all_traces() %MARKED
 disp('____________________________')
 disp('Running trace_1a:')
 disp(repmat(char([32, 773]), 1, 28))
