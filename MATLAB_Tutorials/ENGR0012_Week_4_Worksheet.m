@@ -6,7 +6,7 @@
 %[text] ### Different Loading Practices (Not Recommended)
 %[text] While the following methods work, they are not recommended due to unclear variable naming.
 R = randi(15, 3, 4);
-save("datafile.txt", "R", "-ascii") %MARKED
+save("datafile.txt", "R", "-ascii")
 
 % Some working but not recommended loading practice:
 % Default variable name after loading
@@ -20,7 +20,7 @@ while exist(filename, 'file') == 0
     filename = input('Please enter file name: ', 's');
 end
 % Alternatively, hard-code: filename = 'datafile.txt'
-matrix = load(filename); %MARKED
+matrix = load(filename);
 %%
 %[text] ## Loops: Challenging Practices
 %[text] Apply loops to solve more complex problems. We'll practice finding specific values and computations.
@@ -40,7 +40,7 @@ while (loopIndex <= length(vec2))
     loopIndex = loopIndex + 1;
 end
 
-avg_of_25_more = currentSum / currentCount; %MARKED
+avg_of_25_more = currentSum / currentCount;
 %%
 %[text] #### Example 2: Find the Largest Perfect Square in a Range
 %[text] Find the largest perfect square number in the range \[2000, 2050\].
@@ -56,7 +56,7 @@ for var = 2000:2050
     if sqrt(var) == floor(sqrt(var))
         currentlargest = var;
     end
-end %MARKED
+end
 disp(currentlargest) %[output:187d43c3]
 %%
 %[text] ## Create and Call Functions
@@ -78,35 +78,29 @@ disp(currentlargest) %[output:187d43c3]
 %%
 %[text] #### Type 1: No Inputs and No Outputs
 %[text] The simplest function type. Call the function and it performs an action.
-% Call the function:
 % TODO: Call display_welcome() to run the example.
-% Type 1: No inputs and no outputs
+
 % TODO: Define function display_welcome() with no inputs or outputs.
 % TODO: Inside, display two welcome lines using disp.
 %%
 %[text] #### Type 2: No Inputs but Has Outputs
 %[text] Create and return data without requiring input parameters.
-% Call the function:
 % TODO: Call generate_values() and capture three outputs.
 % TODO: Optionally display the returned values with disp.
 
-% Type 2: No inputs and have outputs
 % TODO: Define function [x, y, z] = generate_values() that sets x=5, y=10, z=15.
 %%
 %[text] #### Type 3: Has Inputs but No Outputs
 %[text] Process data and display results without returning values.
-% Call the function:
-% TODO: Call display_triangle(4, 6) to show the area.
-% Type 3: Have inputs and no outputs
+% TODO: Call display_triangle with 4 and 6 to show the area.
+
 % TODO: Define function display_triangle(base, height).
 % TODO: Compute area = 0.5 * base * height and display "Triangle Area: <value>".
 %%
 %[text] #### Type 4: Has Both Inputs and Outputs
 %[text] The most versatile function type. Process input data and return computed results.
-% Call the function:
-% TODO: Call calculate_triangle(3, 4) and capture hypotenuse and area.
+% TODO: Call calculate_triangle with 3 and 4 and capture hypotenuse and area.
 
-% Type 4: Have inputs and have outputs
 % TODO: Define function [c, area] = calculate_triangle(a, b).
 % TODO: Compute c = sqrt(a^2 + b^2) and area = 0.5 * a * b.
 %%
@@ -131,7 +125,6 @@ disp(currentlargest) %[output:187d43c3]
 %%
 %[text] ### Example 1: Simple Variable Name Change
 %[text] In this example, we have different variable names in the main vs. the function.
-% MAIN SCRIPT:
 % TODO: Set side3 and side4 values.
 % TODO: Call calculate_triangle(side3, side4) and store outputs in hypotenuse and s.
 
@@ -151,12 +144,12 @@ disp(currentlargest) %[output:187d43c3]
 %[text] ### Example 2: More Complex Variable Name Changes
 %[text] All variables change names between main and function
 % MAIN SCRIPT:
-% TODO: Set x, y, z values.
+% TODO: Set x, y, z values with 5/10/3
 % TODO: Call math_operation(x, y, z) and store outputs in result1, result2, result3.
 
 % FUNCTION DEFINITION:
 % TODO: Define function [out_a, out_b, out_c] = math_operation(in1, in2, in3).
-% TODO: Compute out_a = in1 + in2, out_b = in1 * in2, out_c = in3^2.
+% TODO: Compute out_a = in1 + in2, out_b = in1 * in2, out_c = in3^2
 %%
 %[text] #### POSITION-BY-POSITION MAPPING:
 %[text] INPUT SIDE (when calling function):
@@ -173,18 +166,12 @@ disp(currentlargest) %[output:187d43c3]
 %%
 %[text] ### Example 3: Variable Passing and Returning By Position
 % MAIN SCRIPT:
-% TODO: Set a and b values.
-% BEFORE CALLING FUNCTION:
-% Workspace: [a=10, b=20]
-
+% TODO: Set a and b values with 10/20
 % TODO: Call my_function(b, a) and store the returned value in b.
+
 % FUNCTION:
 % TODO: Define function n = my_function(m, n).
 % TODO: Display m and n, then set n = m + n and return it.
-
-% AFTER CALLING FUNCTION:
-% Workspace: [a=10, b=30]
-% NOTE: 'm' and 'n' are NOT in workspace!
 %%
 %[text] #### POSITION-BY-POSITION MAPPING:
 %[text] INPUT SIDE (when calling function):
@@ -216,33 +203,32 @@ disp(currentlargest) %[output:187d43c3]
 %%
 %[text] ### Simple Approach (for Specific Data File)
 %[text] When you have a hardcoded data file path and know its structure:
-% TODO: Load data from 'datafile.txt' into matrix_data.
+% Load data from 'datafile.txt' into matrix_data.
 % TODO: Extract A_hardcoded as the first 3 columns and first 3 rows.
 % TODO: Extract b_hardcoded as the last column of the first 3 rows.
 %%
 %[text] ### Flexible Approach (Handles Different Data Files and Sizes)
 %[text] More robust solution that works with any properly formatted data file.
 % Step 1: Ask user to enter filename and check if it exists
-% TODO: Prompt for a filename using input(..., 's').
-% TODO: Loop until exist(filename, 'file') returns nonzero.
+
 
 % Step 2: Load the data and determine dimensions automatically
-% TODO: Load the file into matrix_data.
-% TODO: Use size(matrix_data) to get rows and cols.
+
 
 % Step 3: Extract matrix A and vector b
-% TODO: Set A to the first (cols-1) columns.
-% TODO: Set b to the last column.
+
+
 %%
 %[text] ### Solving Ax = b with Error Checking
 %[text] Before solving, we must verify two important conditions:
 %[text] 1. Matrix A must be square (number of rows = number of columns)
 %[text] 2. Determinant of A must not equal zero (det(A) ≠ 0) for a unique solution \
 % Check if A is square
-% TODO: Use size(A) to get rows_A and cols_A.
-% TODO: If rows_A ~= cols_A, display an error about A not being square.
+% TODO: If not, display an error about A not being square.
+
 % TODO: Otherwise, check if det(A) == 0 and display a singular error if so.
-% TODO: If A is square and non-singular, compute x = A^(-1) * b and display it.
+
+% TODO: If A is square and non-singular, compute x
 %%
 %[text] ## Linear-Algebra Related Functions
 %[text] Essential functions for solving systems of equations and matrix operations.
@@ -449,21 +435,6 @@ end
 %---
 %[output:187d43c3]
 %   data: {"dataType":"text","outputData":{"text":"        2025\n\n","truncated":false}}
-%---
-%[output:31148446]
-%   data: {"dataType":"text","outputData":{"text":"Welcome to MATLAB Functions!\nThis is a simple function with no inputs or outputs.\n","truncated":false}}
-%---
-%[output:2608ae5c]
-%   data: {"dataType":"text","outputData":{"text":"Triangle Area: 12\n","truncated":false}}
-%---
-%[output:8ffdbe52]
-%   data: {"dataType":"text","outputData":{"text":"m in function is 20\nn in function is 10\n","truncated":false}}
-%---
-%[output:6cff61e8]
-%   data: {"dataType":"text","outputData":{"text":"Solution:\n","truncated":false}}
-%---
-%[output:40284a2c]
-%   data: {"dataType":"text","outputData":{"text":"    1.0990\n   -2.9505\n    2.8119\n\n","truncated":false}}
 %---
 %[output:1b7e1e78]
 %   data: {"dataType":"text","outputData":{"text":"____________________________\nRunning trace_1a:\n ̅ ̅ ̅ ̅ ̅ ̅ ̅ ̅ ̅ ̅ ̅ ̅ ̅ ̅ ̅ ̅ ̅ ̅ ̅ ̅ ̅ ̅ ̅ ̅ ̅ ̅ ̅ ̅\n    15\n\n____________________________\nRunning trace_1b:\n ̅ ̅ ̅ ̅ ̅ ̅ ̅ ̅ ̅ ̅ ̅ ̅ ̅ ̅ ̅ ̅ ̅ ̅ ̅ ̅ ̅ ̅ ̅ ̅ ̅ ̅ ̅ ̅\n","truncated":false}}
