@@ -51,8 +51,8 @@ int main()
 	// KEY DIFFERENCE FROM MATLAB
 	// In C, the index of an array starts from 0, not 1.
 
-	int M[2][6] = {{1, 2, 3, 4, 5, 6}, {7, 8, 9, 10, 11, 12}}; // 2D array of integers
-	// or int M[2][6] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12}; // you can put them just in one {}
+	int M[2][6] = {{1, 2, 3, 40, 5, 60}, {7, 80, 9, 101, 12, 201}}; // 2D array of integers
+	// or int M[2][6] = {1, 2, 3, 40, 5, 60, 7, 80, 9, 101, 12, 201}; // you can put them just in one {}
 
 	printf("the element at row 1 and column 3 of M is %d\n", M[0][2]);
 	printf("\n\n");
@@ -71,8 +71,8 @@ int main()
 	// Data Types
 	// C has several data types, including int, float, double, char, etc.
 	int x = 10, d = 100;						 // integer
-	float y = 3.14, e = 2.72;				 // single-precision floating-point number
-	double z = 3.14159, f = 1.23456; // double-precision floating-point number
+	float y = 7.998, e = 2.72;			 // single-precision floating-point number
+	double z = 3.14159, f = 69.3476; // double-precision floating-point number
 	char ch = 'A', option = '1';		 // character
 
 	// Printf
@@ -120,7 +120,7 @@ int main()
 	// If the number is less than 7 digits, it will be padded with spaces on left
 
 	// left- and right+ alignment in printf
-	printf("f=%-7.3lf\n", f);
+	printf("f=%-7.3lf===\n", f); // === is just to show the alignment, it is not part of the format
 	printf("f=%+7.3lf\n", f);
 	// fill with 0s alignment
 	printf("f=%07.3lf\n", f);
@@ -129,11 +129,11 @@ int main()
 	printf("Enter a new value for M[1][4]: ");
 	scanf("%d", &M[1][4]);
 	printf("the element at row 2 and column 5 of M is %d\n", M[1][4]);
-	printf("\n");
 
 	// or update a value in the array and then print it
 	M[1][5] = M[1][5] + 1;
-	printf("the element at row 2 and column 6 of M is %d\n", M[1][5]);
+	printf("the element at row 2 and column 6 of M is updated to %d\n", M[1][5]);
+	printf("\n\n");
 
 	/* 03/19's Content: Escape Sequences
 	==============================================================
@@ -188,6 +188,7 @@ int main()
 	printf("==============================================================\n");
 
 	int tipPercent;
+	printf("Enter the tip percentage you want to give: ");
 	scanf("%d", &tipPercent);
 	double tipAmount = (tipPercent / 100.0) * 18.00;
 	double total = 18.00 + 1.26 + tipAmount;
@@ -208,7 +209,7 @@ int main()
 	printf("Quote of the Day: \"Good food = Good mood.\"\n");
 	printf("Note: Visit us at C:\\GavinsGrill\\Menu\n");
 	printf("Thank you for dining with us!\n");
-	return 0;
+	printf("\n\n");
 
 	/* 03/19's Content: HW7 Hints
 	==============================================================
@@ -233,17 +234,17 @@ int main()
 
 	char choice;
 	printf("Demo test, Enter 1 or 2: ");
-	scanf(" %c", &choice); // Read a char from the user and store it in ch
+	scanf(" %c", &choice); // Read a char from the user and store it in choice
 	switch (choice)
 	{
 	case '1':
 	{
-		printf("You are testing part 1.\n");
+		printf("You are testing part 1.\n\n");
 		break;
 	}
 	case '2':
 	{
-		printf("You are testing part 2.\n");
+		printf("You are testing part 2.\n\n");
 		break;
 	}
 	}
@@ -255,7 +256,7 @@ Workflow: Compiling and Running the Program
 
 1. Write the Program:
 	 - Open your text editor or IDE (e.g., Geany, VS Code).
-	 - Write the C code as shown below and save it as `week10_tutorial.c`.
+	 - Write the C code as shown below and save it as `classwork10.c`.
 	 - If you are using Geany, you can create a c file using template
 	 - If you are using the VS Code cloud IDE (i.e., here), compile and run are just to click the run button
 
@@ -264,15 +265,15 @@ Workflow: Compiling and Running the Program
 	 - Option B : if in computer terminal
 	 - Open the terminal, navigate to the directory where your c file stores.
 	 - Use the `gcc` compiler to compile the program:
-		 gcc -o week10_tutorial week10_tutorial.c
-	 - This command tells `gcc` to compile `week10_tutorial.c` and output an executable named `week10_tutorial`.
+		 gcc -o classwork10 classwork10.c
+	 - This command tells `gcc` to compile `classwork10.c` and output an executable named `classwork10`.
 
 3. Run the Compiled Program:
 	 - Option A : if in Geany, simply click execute
 	 - Option B : if in computer terminal
 	 - In the terminal, run the compiled program by typing:
-		 ./week10_tutorial
-	 - This command executes the `week10_tutorial` program, and you should see the output in the terminal.
+		 ./classwork10
+	 - This command executes the `classwork10` program, and you should see the output in the terminal.
 */
 
 /*
@@ -283,35 +284,34 @@ Output of the program:
 Hello, world!
 Welcome to learning C programming!
 The sum of 5 and 10 is 15
-the fourth element of M is 40
-the element at row 1 and column 3 of N is 3
+the fourth element of V is 40
+the element at row 1 and column 3 of M is 3
 
 
 03/19's Content: Data Types, Printf, Scanf, Precision
 ==============================================================
 x=10
-y=3.140000
+y=7.998000
 z=3.141590
 ch=A
 option=1
 z in integer is 1431671456
 ch in integer is 65
-Enter an integer for x: 87
-new x=87
-Enter a double for z: 7.89
-new z=7.890000
-Enter a char for ch: p
-new ch=p
-y=3.14
-z=7.890
-f=  1.235
-f=1.235
-f= +1.235
-f=001.235
-the element at row 1 and column 3 of NEW is 3
-the element at row 2 and column 2 of NEWD is 4.400000
-Enter a new value for NEW[0][2]: 567
-the element at row 1 and column 3 of NEW is 567
+Enter an integer for x: 49
+new x=49
+Enter a double for z: 4.12
+new z=4.120000
+Enter a char for ch: h
+new ch=h
+y=8.00
+z=4.120
+f= 69.348
+f=69.348 ===
+f=+69.348
+f=069.348
+Enter a new value for M[1][4]: 120
+the element at row 2 and column 5 of M is 120
+the element at row 2 and column 6 of M is updated to 202
 
 
 03/19's Content: Escape Sequences
@@ -337,6 +337,29 @@ Here is a blank line in between:
 abcd
 
 abcd
+
+
+03/19's Content: Mini Practice
+==============================================================
+Enter the tip percentage you want to give: 25
+
+
+"Gavin's Grill & Dine"
+=====================================
+Item                    Price
+-------------------------------------
+Steak                   $12.00
+Drink                   $6.00
+-------------------------------------
+Subtotal:               $18.00
+Tax (7%):               $1.26
+Tip (25%):              $4.50
+Total:                  $23.76
+
+-------------------------------------
+Quote of the Day: "Good food = Good mood."
+Note: Visit us at C:\GavinsGrill\Menu
+Thank you for dining with us!
 
 
 03/19's Content: HW7 Hints
