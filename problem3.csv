@@ -1,0 +1,125 @@
+student_file,score,reason
+AdamsSimon.c,6.25,No rubric errors detected in problem 3 block.
+AgerbakSam.c,0,No error checking included.; Content-related typo (prompt does not clearly mention both P and R).
+AlbuTudor.c,5,Missing space for %c in scanf.
+AltunalBerra.c,6.25,No rubric errors detected in problem 3 block.
+BabilonGia.c,0,No error checking included.; Content-related typo (prompt does not clearly mention both P and R).
+BaboucheLiana.c,6.25,No rubric errors detected in problem 3 block.
+BajekJacob.c,5,Error checking with branching instead of looping.
+BarkerBrett.c,0,No error checking included.
+BarzenAva.c,6.25,No rubric errors detected in problem 3 block.
+BogdanskiKayla.c,0,No error checking included.
+BrinkerhoffAva.c,6.25,No rubric errors detected in problem 3 block.
+BrosiusTanner.c,6.25,No rubric errors detected in problem 3 block.
+BunovichGeorge.c,6.25,No rubric errors detected in problem 3 block.
+CastilloBetancourtIgnacio.c,6.25,No rubric errors detected in problem 3 block.
+CengelElena.c,5,Content-related typo (prompt does not clearly mention both P and R).
+ChaseOwen.c,0,No error checking included.
+ChenJonathan.c,6.25,No rubric errors detected in problem 3 block.
+ChenVincent.c,6.25,No rubric errors detected in problem 3 block.
+ClineffChris.c,6.25,No rubric errors detected in problem 3 block.
+CollinsKade.c,6.25,No rubric errors detected in problem 3 block.
+ComunaleNico.c,6.25,No rubric errors detected in problem 3 block.
+ConwayKellen.c,6.25,No rubric errors detected in problem 3 block.
+CoriglianoDerek.c,5,Error checking with branching instead of looping.
+CottrillAliya.c,6.25,No rubric errors detected in problem 3 block.
+CreaghLiam.c,5,Error checking with branching instead of looping.
+CreightonLiam.c,0,No error checking included.; Missing space for %c in scanf.
+DassJishnu.c,6.25,No rubric errors detected in problem 3 block.
+DavernAiden.c,6.25,No rubric errors detected in problem 3 block.
+DayoGideon.c,6.25,No rubric errors detected in problem 3 block.
+DecterNat.c,6.25,No rubric errors detected in problem 3 block.
+DiNataleEmanuel.c,0,No error checking included.
+EbarbEvan.c,6.25,No rubric errors detected in problem 3 block.
+EssnerSamuel.c,6.25,No rubric errors detected in problem 3 block.
+FlahertyWinaida.c,6.25,No rubric errors detected in problem 3 block.
+FranksJacob.c,6.25,No rubric errors detected in problem 3 block.
+FreedNathan.c,6.25,No rubric errors detected in problem 3 block.
+GawronskiDrew.c,0,No error checking included.; Content-related typo (prompt does not clearly mention both P and R).
+GeerIsaac.c,6.25,No rubric errors detected in problem 3 block.
+GhimireNishma.c,6.25,No rubric errors detected in problem 3 block.
+GiandomenicoXander.c,0,No error checking included.; Content-related typo (prompt does not clearly mention both P and R).; Wrong data type used (P/R option should be char).
+GillinSean.c,6.25,No rubric errors detected in problem 3 block.
+GloverJack.c,5,Error checking with branching instead of looping.
+GourleyIsaac.c,6.25,No rubric errors detected in problem 3 block.
+GrantCaitlin.c,0,No error checking included.; Missing space for %c in scanf.
+GrayOlivia.c,6.25,No rubric errors detected in problem 3 block.
+GrossAidan.c,5,Did not ask for user choice (missing scanf/getchar).
+HansellPatrick.c,5,Missing space for %c in scanf.
+HarderMaxwell.c,6.25,No rubric errors detected in problem 3 block.
+HarrellNirvan.c,0,No error checking included.; Missing space for %c in scanf.
+HarrisonPatrick.c,6.25,No rubric errors detected in problem 3 block.
+HeinemanMatthew.c,5,Error checking with branching instead of looping.
+HoltcampSid.c,6.25,No rubric errors detected in problem 3 block.
+HutjensAndrew.c,5,Missing space for %c in scanf.
+IavaroneMassimo.c,6.25,No rubric errors detected in problem 3 block.
+JensenFinn.c,5,Missing space for %c in scanf.
+KalbachDante.c,5,Missing space for %c in scanf.
+KlypkaDasha.c,6.25,No rubric errors detected in problem 3 block.
+KostaAva.c,6.25,No rubric errors detected in problem 3 block.
+KovacsMadison.c,0,No error checking included.; Content-related typo (prompt does not clearly mention both P and R).
+KrastevNicholas.c,5,Error checking with branching instead of looping.
+KuhlMick.c,6.25,No rubric errors detected in problem 3 block.
+KuriakoseReuben.c,0,No error checking included.; Content-related typo (prompt does not clearly mention both P and R).
+LeahyWill.c,6.25,No rubric errors detected in problem 3 block.
+LeopoldHenry.c,0,No error checking included.; Content-related typo (prompt does not clearly mention both P and R).
+LeskovicNiko.c,5,Used var not declared (P/R option variable).; Missing space for %c in scanf.; Error checking with branching instead of looping.
+LinBrendon.c,6.25,No rubric errors detected in problem 3 block.
+MagieraXander.c,6.25,No rubric errors detected in problem 3 block.
+MahadevanSneha.c,6.25,No rubric errors detected in problem 3 block.
+MahaliManasVarma.c,6.25,No rubric errors detected in problem 3 block.
+MamaneGabi.c,6.25,No rubric errors detected in problem 3 block.
+MattoleMaddox.c,6.25,No rubric errors detected in problem 3 block.
+MazucaOlivia.c,6.25,No rubric errors detected in problem 3 block.
+MichaelAustin.c,6.25,No rubric errors detected in problem 3 block.
+MooreAlexander.c,6.25,No rubric errors detected in problem 3 block.
+MooreBen.c,6.25,No rubric errors detected in problem 3 block.
+MuchoOwen.c,5,Error checking with branching instead of looping.
+NebelHayden.c,6.25,No rubric errors detected in problem 3 block.
+NgoKayla.c,6.25,No rubric errors detected in problem 3 block.
+NiChanel.c,6.25,No rubric errors detected in problem 3 block.
+NinanRebecca.c,0,No error checking included.
+NjungeJesse.c,5,Error checking with branching instead of looping.
+NumforScott.c,6.25,No rubric errors detected in problem 3 block.
+OgukuBeatrice.c,0,No error checking included.
+Ortega-BrownSantiago.c,0,No error checking included.; Content-related typo (prompt does not clearly mention both P and R).
+PanKristy.c,5,Error checking with branching instead of looping.
+ParkJasmine.c,5,Missing space for %c in scanf.
+PeraltaLuke.c,5,Missing space for %c in scanf.
+PerryZander.c,6.25,No rubric errors detected in problem 3 block.
+PetersonLila.c,6.25,No rubric errors detected in problem 3 block.
+PhamAaron.c,6.25,No rubric errors detected in problem 3 block.
+PhamElise.c,0,No error checking included.
+PorterBrendan.c,6.25,No rubric errors detected in problem 3 block.
+RajkumarSriram.c,6.25,No rubric errors detected in problem 3 block.
+RankinBrady.c,6.25,No rubric errors detected in problem 3 block.
+RarrickConor.c,6.25,No rubric errors detected in problem 3 block.
+RennekampConnor.c,6.25,No rubric errors detected in problem 3 block.
+RickOwen.c,6.25,No rubric errors detected in problem 3 block.
+RomeroEd.c,6.25,No rubric errors detected in problem 3 block.
+SarabekovaOyshabonu.c,6.25,No rubric errors detected in problem 3 block.
+SariskyJansen.c,6.25,No rubric errors detected in problem 3 block.
+SchallerKyle.c,6.25,No rubric errors detected in problem 3 block.
+SchlaufmanMaya.c,6.25,No rubric errors detected in problem 3 block.
+SchrollWoodJay.c,6.25,No rubric errors detected in problem 3 block.
+ScottJake.c,0,No error checking included.; Content-related issue (missing prompt for P/R option).
+SeeBenjamin.c,6.25,No rubric errors detected in problem 3 block.
+SevakAarya.c,6.25,No rubric errors detected in problem 3 block.
+SitaramanArjun.c,6.25,No rubric errors detected in problem 3 block.
+SmithEthan.c,6.25,No rubric errors detected in problem 3 block.
+SteinbergJacob.c,0,No error checking included.; Content-related typo (prompt does not clearly mention both P and R).
+SterlingAmani.c,6.25,No rubric errors detected in problem 3 block.
+StoughtonLilyanna.c,0,No error checking included.
+SuwannachinPun.c,6.25,No rubric errors detected in problem 3 block.
+TangJoy.c,5,Error checking with branching instead of looping.
+TaylorMichael.c,6.25,No rubric errors detected in problem 3 block.
+TulettReid.c,6.25,No rubric errors detected in problem 3 block.
+UniceKaden.c,6.25,No rubric errors detected in problem 3 block.
+VazquezMaddy.c,5,Content-related typo (prompt does not clearly mention both P and R).
+VinanskyLuke.c,6.25,No rubric errors detected in problem 3 block.
+WatkinsAnthony.c,6.25,No rubric errors detected in problem 3 block.
+WhitleyNathan.c,6.25,No rubric errors detected in problem 3 block.
+WojdelkoBryan.c,6.25,No rubric errors detected in problem 3 block.
+WongTim.c,6.25,No rubric errors detected in problem 3 block.
+WrightGrace.c,5,Error checking with branching instead of looping.
+ZhengEthan.c,6.25,No rubric errors detected in problem 3 block.

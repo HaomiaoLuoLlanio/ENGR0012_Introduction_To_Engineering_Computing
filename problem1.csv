@@ -1,0 +1,125 @@
+student_file,score,reason
+AdamsSimon.c,6.25,No rubric errors detected in problem 1 block.
+AgerbakSam.c,0,missing fopen; missing fprintf / did not print statement to file; printed intro to stdout instead of file
+AlbuTudor.c,6.25,No rubric errors detected in problem 1 block.
+AltunalBerra.c,5,content-related typo / intro text mismatch
+BabilonGia.c,5,content-related typo / intro text mismatch
+BaboucheLiana.c,6.25,No rubric errors detected in problem 1 block.
+BajekJacob.c,6.25,No rubric errors detected in problem 1 block.
+BarkerBrett.c,5,content-related typo / intro text mismatch
+BarzenAva.c,6.25,No rubric errors detected in problem 1 block.
+BogdanskiKayla.c,0,missing fprintf / did not print statement to file
+BrinkerhoffAva.c,6.25,No rubric errors detected in problem 1 block.
+BrosiusTanner.c,6.25,No rubric errors detected in problem 1 block.
+BunovichGeorge.c,5,content-related typo / intro text mismatch
+CastilloBetancourtIgnacio.c,6.25,No rubric errors detected in problem 1 block.
+CengelElena.c,6.25,No rubric errors detected in problem 1 block.
+ChaseOwen.c,6.25,No rubric errors detected in problem 1 block.
+ChenJonathan.c,0,Major error: missing fopen and did not print the statement to the file.
+ChenVincent.c,6.25,No rubric errors detected in problem 1 block.
+ClineffChris.c,6.25,No rubric errors detected in problem 1 block.
+CollinsKade.c,6.25,missing fopen; missing fprintf / did not print statement to file, 1
+ComunaleNico.c,6.25,No rubric errors detected in problem 1 block.
+ConwayKellen.c,6.25,No rubric errors detected in problem 1 block.
+CoriglianoDerek.c,0,missing fprintf / did not print statement to file; printed intro to stdout instead of file
+CottrillAliya.c,5,content-related typo / intro text mismatch; undeclared var used in fopen
+CreaghLiam.c,5,fopen uses r/a
+CreightonLiam.c,6.25,No rubric errors detected in problem 1 block.
+DassJishnu.c,6.25,No rubric errors detected in problem 1 block.
+DavernAiden.c,6.25,No rubric errors detected in problem 1 block.
+DayoGideon.c,6.25,missing fopen; missing fprintf / did not print statement to file,1
+DecterNat.c,6.25,No rubric errors detected in problem 1 block.
+DiNataleEmanuel.c,6.25,No rubric errors detected in problem 1 block.
+EbarbEvan.c,6.25,No rubric errors detected in problem 1 block.
+EssnerSamuel.c,5,content-related typo / intro text mismatch; undeclared var used in fopen
+FlahertyWinaida.c,6.25,No rubric errors detected in problem 1 block.
+FranksJacob.c,6.25,No rubric errors detected in problem 1 block.
+FreedNathan.c,6.25,No rubric errors detected in problem 1 block.
+GawronskiDrew.c,0,missing fprintf / did not print statement to file; printed intro to stdout instead of file
+GeerIsaac.c,6.25,No rubric errors detected in problem 1 block.
+GhimireNishma.c,6.25,No rubric errors detected in problem 1 block.
+GiandomenicoXander.c,0,missing fopen; missing fprintf / did not print statement to file
+GillinSean.c,6.25,No rubric errors detected in problem 1 block.
+GloverJack.c,6.25,No rubric errors detected in problem 1 block.
+GourleyIsaac.c,5,content-related typo / intro text mismatch
+GrantCaitlin.c,5,"More than three minor errors: bad declaration/assignment syntax, missing file pointer in fprintf, and did not fclose.",1
+GrayOlivia.c,5,content-related typo / intro text mismatch
+GrossAidan.c,5,fopen uses r/a
+HansellPatrick.c,6.25,No rubric errors detected in problem 1 block.
+HarderMaxwell.c,6.25,No rubric errors detected in problem 1 block.
+HarrellNirvan.c,5,did not fclose
+HarrisonPatrick.c,6.25,No rubric errors detected in problem 1 block.
+HeinemanMatthew.c,5,content-related typo / intro text mismatch
+HoltcampSid.c,6.25,No rubric errors detected in problem 1 block.
+HutjensAndrew.c,6.25,No rubric errors detected in problem 1 block.
+IavaroneMassimo.c,6.25,No rubric errors detected in problem 1 block.
+JensenFinn.c,6.25,No rubric errors detected in problem 1 block.
+KalbachDante.c,0,missing fopen; missing fprintf / did not print statement to file; printed intro to stdout instead of file
+KlypkaDasha.c,5,content-related typo / intro text mismatch
+KostaAva.c,6.25,No rubric errors detected in problem 1 block.
+KovacsMadison.c,0,"More than three minor errors: bad file pointer declaration, invalid fopen mode, missing fp in fprintf, and bad fclose argument."
+KrastevNicholas.c,5,did not fclose
+KuhlMick.c,6.25,No rubric errors detected in problem 1 block.
+KuriakoseReuben.c,6.25,No rubric errors detected in problem 1 block.
+LeahyWill.c,6.25,No rubric errors detected in problem 1 block.
+LeopoldHenry.c,5,"More than three minor errors: bad fp declaration, missing fp in fprintf, did not fclose, and intro text typo.",1
+LeskovicNiko.c,0,missing fopen; missing fprintf / did not print statement to file; printed intro to stdout instead of file
+LinBrendon.c,6.25,No rubric errors detected in problem 1 block.
+MagieraXander.c,6.25,No rubric errors detected in problem 1 block.
+MahadevanSneha.c,6.25,No rubric errors detected in problem 1 block.
+MahaliManasVarma.c,6.25,No rubric errors detected in problem 1 block.
+MamaneGabi.c,6.25,No rubric errors detected in problem 1 block.
+MattoleMaddox.c,0,missing fopen; missing fprintf / did not print statement to file
+MazucaOlivia.c,5,fopen uses r/a
+MichaelAustin.c,6.25,No rubric errors detected in problem 1 block.
+MooreAlexander.c,5,Minor typo in the file name/mode; otherwise the intro is written and the file is closed.
+MooreBen.c,5,content-related typo / intro text mismatch
+MuchoOwen.c,5,fopen uses r/a; missing fp inside fprintf
+NebelHayden.c,6.25,No rubric errors detected in problem 1 block.
+NgoKayla.c,0,Major error: printed the intro to stdout instead of the file; fopen uses read mode.
+NiChanel.c,6.25,No rubric errors detected in problem 1 block.
+NinanRebecca.c,0,Major error: printed the intro to stdout instead of the file; fopen uses append mode.
+NjungeJesse.c,6.25,No rubric errors detected in problem 1 block.
+NumforScott.c,5,content-related typo / intro text mismatch; missing fp inside fprintf
+OgukuBeatrice.c,6.25,No rubric errors detected in problem 1 block.
+Ortega-BrownSantiago.c,5,"More than three minor errors: bad file pointer declaration, undeclared var in fopen, missing fp in fprintf, and did not fclose.",1
+PanKristy.c,0,missing fprintf / did not print statement to file; printed intro to stdout instead of file
+ParkJasmine.c,6.25,missing fprintf / did not print statement to file,1
+PeraltaLuke.c,6.25,No rubric errors detected in problem 1 block.
+PerryZander.c,6.25,No rubric errors detected in problem 1 block.
+PetersonLila.c,6.25,No rubric errors detected in problem 1 block.
+PhamAaron.c,6.25,No rubric errors detected in problem 1 block.
+PhamElise.c,0,did not fclose; missing fprintf / did not print statement to file; printed intro to stdout instead of file
+PorterBrendan.c,5,fopen mode uses character literal
+RajkumarSriram.c,6.25,No rubric errors detected in problem 1 block.
+RankinBrady.c,6.25,No rubric errors detected in problem 1 block.
+RarrickConor.c,0,Major error: did not print the statement to the file; also bad file pointer declaration and invalid fopen/fclose usage.
+RennekampConnor.c,5,content-related typo / intro text mismatch
+RickOwen.c,6.25,No rubric errors detected in problem 1 block.
+RomeroEd.c,6.25,missing fopen; missing fprintf / did not print statement to file, 1
+SarabekovaOyshabonu.c,6.25,No rubric errors detected in problem 1 block.
+SariskyJansen.c,6.25,No rubric errors detected in problem 1 block.
+SchallerKyle.c,6.25,No rubric errors detected in problem 1 block.
+SchlaufmanMaya.c,5,fopen mode uses character literal
+SchrollWoodJay.c,6.25,No rubric errors detected in problem 1 block.
+ScottJake.c,6.25,No rubric errors detected in problem 1 block.
+SeeBenjamin.c,6.25,No rubric errors detected in problem 1 block.
+SevakAarya.c,6.25,No rubric errors detected in problem 1 block.
+SitaramanArjun.c,6.25,No rubric errors detected in problem 1 block.
+SmithEthan.c,6.25,No rubric errors detected in problem 1 block.
+SteinbergJacob.c,6.25,No rubric errors detected in problem 1 block.
+SterlingAmani.c,0,missing fopen; missing fprintf / did not print statement to file
+StoughtonLilyanna.c,6.25,No rubric errors detected in problem 1 block.
+SuwannachinPun.c,6.25,No rubric errors detected in problem 1 block.
+TangJoy.c,6.25,No rubric errors detected in problem 1 block.
+TaylorMichael.c,6.25,No rubric errors detected in problem 1 block.
+TulettReid.c,0,missing fopen
+UniceKaden.c,6.25,No rubric errors detected in problem 1 block.
+VazquezMaddy.c,5,Minor typo in the file name; otherwise the intro is written and the file is closed.
+VinanskyLuke.c,5,missing fopen; missing fp inside fprintf,1
+WatkinsAnthony.c,6.25,No rubric errors detected in problem 1 block.
+WhitleyNathan.c,6.25,No rubric errors detected in problem 1 block.
+WojdelkoBryan.c,6.25,No rubric errors detected in problem 1 block.
+WongTim.c,6.25,No rubric errors detected in problem 1 block.
+WrightGrace.c,5,fopen uses r/a; missing fp inside fprintf
+ZhengEthan.c,0,missing fopen; missing fprintf / did not print statement to file

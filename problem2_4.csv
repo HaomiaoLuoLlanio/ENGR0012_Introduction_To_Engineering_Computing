@@ -1,0 +1,125 @@
+student_file,score,reason
+AdamsSimon.c,6.25,No rubric errors detected in problem 2 block.
+AgerbakSam.c,5,Program doesn't end if wrong password is entered (no else/return).; Did not set up branching structure based on user choice (P/R).; Wrong data type used (password scanf format).,1
+AlbuTudor.c,6.25,No rubric errors detected in problem 2 block.
+AltunalBerra.c,6.25,No rubric errors detected in problem 2 block.
+BabilonGia.c,5,Did not set up branching structure based on user choice (P/R).; Content-related typo (prompt does not mention password).; Wrong data type used (scanf missing & for password).; Missing the statement for when password is incorrect.
+BaboucheLiana.c,6.25,No rubric errors detected in problem 2 block.
+BajekJacob.c,5,Did not set up branching structure based on user choice (P/R).; Wrong data type used (scanf missing & for password).,1
+BarkerBrett.c,6.25,No rubric errors detected in problem 2 block.
+BarzenAva.c,6.25,No rubric errors detected in problem 2 block.
+BogdanskiKayla.c,0,Program doesn't end if wrong password is entered (no else/return).; Did not set up branching structure based on user choice (P/R).
+BrinkerhoffAva.c,6.25,No rubric errors detected in problem 2 block.
+BrosiusTanner.c,6.25,No rubric errors detected in problem 2 block.
+BunovichGeorge.c,5,Content-related typo (incorrect-password message typo).
+CastilloBetancourtIgnacio.c,6.25,No rubric errors detected in problem 2 block.
+CengelElena.c,0,Did not ask user to enter password (missing printf/puts prompt).; Program doesn't end if wrong password is entered (no else/return).
+ChaseOwen.c,6.25,No rubric errors detected in problem 2 block.
+ChenJonathan.c,6.25,No rubric errors detected in problem 2 block.
+ChenVincent.c,6.25,No rubric errors detected in problem 2 block.
+ClineffChris.c,6.25,No rubric errors detected in problem 2 block.
+CollinsKade.c,6.25,No rubric errors detected in problem 2 block.
+ComunaleNico.c,6.25,No rubric errors detected in problem 2 block.
+ConwayKellen.c,0,Program doesn't end if wrong password is entered (no else/return).
+CoriglianoDerek.c,0,Program doesn't end if wrong password is entered (no else/return).; Did not set up branching structure based on user choice (P/R).; Wrong data type used (password should be int).; Wrong data type used (password scanf format).
+CottrillAliya.c,0,Program doesn't end if wrong password is entered (options reachable on wrong password).; Did not set up branching structure based on user choice (P/R).
+CreaghLiam.c,5,Program doesn't end if wrong password is entered (no else/return).; Wrong data type used (scanf missing & for password).,1
+CreightonLiam.c,5,Did not set up branching structure based on user choice (P/R).; Used var not declared (password variable).; Wrong data type used (scanf missing & for password).,1
+DassJishnu.c,6.25,No rubric errors detected in problem 2 block.
+DavernAiden.c,5,Content-related typo (prompt does not mention password).; Content-related typo (password prompt typo).; Wrong data type used (scanf missing & for password).
+DayoGideon.c,6.25,Missing one of the branches (no incorrect-password branch).; Did not set up branching structure based on user choice (P/R).,1
+DecterNat.c,6.25,No rubric errors detected in problem 2 block.
+DiNataleEmanuel.c,0,Program doesn't end if wrong password is entered (continues after password check).; Did not set up branching structure based on user choice (P/R).
+EbarbEvan.c,6.25,No rubric errors detected in problem 2 block.
+EssnerSamuel.c,0,Program doesn't end if wrong password is entered (no else/return).
+FlahertyWinaida.c,6.25,No rubric errors detected in problem 2 block.
+FranksJacob.c,6.25,No rubric errors detected in problem 2 block.
+FreedNathan.c,5,Content-related typo (incorrect-password message typo).
+GawronskiDrew.c,0,Did not use a branching structure for the password check.
+GeerIsaac.c,6.25,No rubric errors detected in problem 2 block.
+GhimireNishma.c,6.25,No rubric errors detected in problem 2 block.
+GiandomenicoXander.c,0,Did not use a branching structure for the password check.; Content-related typo (prompt does not mention password).; Wrong data type used (scanf missing & for password).
+GillinSean.c,0,Program doesn't end if wrong password is entered (continues after password check).; Did not set up branching structure based on user choice (P/R).; Wrong data type used (scanf missing & for password).
+GloverJack.c,6.25,No rubric errors detected in problem 2 block.
+GourleyIsaac.c,6.25,No rubric errors detected in problem 2 block.
+GrantCaitlin.c,5,Did not set up branching structure based on user choice (P/R).; Wrong data type used (scanf missing & for password).,1
+GrayOlivia.c,6.25,Missing one of the user-choice branches (needs both P and R).; Content-related typo (prompt does not mention password).,1
+GrossAidan.c,5,Did not ask user to enter password (missing scanf).,1
+HansellPatrick.c,6.25,Did not ask user to enter password (missing printf/puts prompt).,1
+HarderMaxwell.c,6.25,No rubric errors detected in problem 2 block.
+HarrellNirvan.c,5,Missing one of the branches (no incorrect-password branch).; Did not set up branching structure based on user choice (P/R).; Wrong data type used (password should be int).; Wrong data type used (password scanf format).,1
+HarrisonPatrick.c,0,Program doesn't end if wrong password is entered (continues after password check).; Did not set up branching structure based on user choice (P/R).
+HeinemanMatthew.c,5,Missing one of the branches (no incorrect-password branch).; Did not set up branching structure based on user choice (P/R).,1
+HoltcampSid.c,5,Missing one of the user-choice branches (needs both P and R).,1
+HutjensAndrew.c,6.25,Missing one of the user-choice branches (needs both P and R).,1
+IavaroneMassimo.c,0,Program doesn't end if wrong password is entered (no else/return).
+JensenFinn.c,5,Content-related typo (incorrect-password message typo).
+KalbachDante.c,6.25,No rubric errors detected in problem 2 block.
+KlypkaDasha.c,0,Program doesn't end if wrong password is entered (no else/return).
+KostaAva.c,6.25,No rubric errors detected in problem 2 block.
+KovacsMadison.c,0,Did not ask user to enter password (missing printf/puts prompt).; Did not set up branching structure based on user choice (P/R).; Wrong data type used (scanf missing & for password).
+KrastevNicholas.c,0,Program doesn't end if wrong password is entered (no else/return).
+KuhlMick.c,0,Program doesn't end if wrong password is entered (options reachable on wrong password).; Did not set up branching structure based on user choice (P/R).
+KuriakoseReuben.c,5,Did not set up branching structure based on user choice (P/R).; Content-related typo (prompt does not mention password).; Wrong data type used (scanf missing & for password).; Missing the statement for when password is incorrect.,1
+LeahyWill.c,6.25,No rubric errors detected in problem 2 block.
+LeopoldHenry.c,5,Did not ask user to enter password (missing printf/puts prompt).; Did not set up branching structure based on user choice (P/R).; Wrong data type used (password scanf format).,1
+LeskovicNiko.c,5,Did not set up branching structure based on user choice (P/R).; Wrong data type used (scanf missing & for password).
+LinBrendon.c,5,Wrong data type used (scanf missing & for password).
+MagieraXander.c,6.25,No rubric errors detected in problem 2 block.
+MahadevanSneha.c,6.25,No rubric errors detected in problem 2 block.
+MahaliManasVarma.c,6.25,No rubric errors detected in problem 2 block.
+MamaneGabi.c,0,Program doesn't end if wrong password is entered (continues after password check).; Did not set up branching structure based on user choice (P/R).
+MattoleMaddox.c,0,Program doesn't end if wrong password is entered (continues after password check).
+MazucaOlivia.c,0,Program doesn't end if wrong password is entered (continues after password check).; Did not set up branching structure based on user choice (P/R).
+MichaelAustin.c,6.25,No rubric errors detected in problem 2 block.
+MooreAlexander.c,6.25,Did not set up branching structure based on user choice (P/R).,1
+MooreBen.c,0,Program doesn't end if wrong password is entered (re-prompts in a loop).
+MuchoOwen.c,0,Missing one of the branches (no incorrect-password branch).; Did not set up branching structure based on user choice (P/R).
+NebelHayden.c,5,Missing the statement for when password is incorrect.
+NgoKayla.c,6.25,No rubric errors detected in problem 2 block.
+NiChanel.c,5,Wrong data type used (password scanf format).
+NinanRebecca.c,0,Program doesn't end if wrong password is entered (no else/return).; Did not set up branching structure based on user choice (P/R).
+NjungeJesse.c,6.25,No rubric errors detected in problem 2 block.
+NumforScott.c,0,Program doesn't end if wrong password is entered (continues after password check).; Did not set up branching structure based on user choice (P/R).
+OgukuBeatrice.c,6.25,Did not set up branching structure based on user choice (P/R).,1
+Ortega-BrownSantiago.c,0,Missing one of the branches (no incorrect-password branch).; Did not set up branching structure based on user choice (P/R).; Content-related typo (prompt does not mention password).; Wrong data type used (password should be int).; Wrong data type used (password scanf format).
+PanKristy.c,6.25,No rubric errors detected in problem 2 block.
+ParkJasmine.c,6.25,No rubric errors detected in problem 2 block.
+PeraltaLuke.c,6.25,No rubric errors detected in problem 2 block.
+PerryZander.c,6.25,No rubric errors detected in problem 2 block.
+PetersonLila.c,6.25,No rubric errors detected in problem 2 block.
+PhamAaron.c,6.25,No rubric errors detected in problem 2 block.
+PhamElise.c,0,Did not use a branching structure for the password check.; Wrong data type used (password scanf format).
+PorterBrendan.c,6.25,No rubric errors detected in problem 2 block.
+RajkumarSriram.c,6.25,No rubric errors detected in problem 2 block.
+RankinBrady.c,6.25,No rubric errors detected in problem 2 block.
+RarrickConor.c,6.25,No rubric errors detected in problem 2 block.
+RennekampConnor.c,6.25,No rubric errors detected in problem 2 block.
+RickOwen.c,6.25,No rubric errors detected in problem 2 block.
+RomeroEd.c,5,Did not ask user to enter password (missing printf/puts prompt).; Did not use a branching structure for the password check.; Wrong data type used (password should be int).; Wrong data type used (password scanf format).,1
+SarabekovaOyshabonu.c,6.25,No rubric errors detected in problem 2 block.
+SariskyJansen.c,0,Program doesn't end if wrong password is entered (no else/return).
+SchallerKyle.c,6.25,No rubric errors detected in problem 2 block.
+SchlaufmanMaya.c,6.25,No rubric errors detected in problem 2 block.
+SchrollWoodJay.c,6.25,No rubric errors detected in problem 2 block.
+ScottJake.c,5,Did not ask user to enter password (missing printf/puts prompt).; Missing one of the branches (no incorrect-password branch).; Did not set up branching structure based on user choice (P/R).; Wrong data type used (password should be int).; Wrong data type used (password scanf format).,1
+SeeBenjamin.c,0,Missing one of the branches (no incorrect-password branch).; Did not set up branching structure based on user choice (P/R).
+SevakAarya.c,5,Program doesn't end if wrong password is entered (options reachable on wrong password).; Did not set up branching structure based on user choice (P/R).,1
+SitaramanArjun.c,5,Missing the statement for when password is incorrect.
+SmithEthan.c,6.25,No rubric errors detected in problem 2 block.
+SteinbergJacob.c,0,Program doesn't end if wrong password is entered (no else/return).
+SterlingAmani.c,6.25,Did not set up branching structure based on user choice (P/R).
+StoughtonLilyanna.c,0,Did not set up branching structure based on user choice (P/R).
+SuwannachinPun.c,0,Program doesn't end if wrong password is entered (no else/return).
+TangJoy.c,6.25,No rubric errors detected in problem 2 block.
+TaylorMichael.c,5,Wrong data type used (scanf missing & for password).
+TulettReid.c,6.25,No rubric errors detected in problem 2 block.
+UniceKaden.c,6.25,No rubric errors detected in problem 2 block.
+VazquezMaddy.c,0,Program doesn't end if wrong password is entered (re-prompts in a loop).; Wrong data type used (scanf missing & for password).
+VinanskyLuke.c,0,Program doesn't end if wrong password is entered (no else/return).; Missing one of the user-choice branches (needs both P and R).
+WatkinsAnthony.c,6.25,No rubric errors detected in problem 2 block.
+WhitleyNathan.c,6.25,No rubric errors detected in problem 2 block.
+WojdelkoBryan.c,0,Program doesn't end if wrong password is entered (no else/return).
+WongTim.c,6.25,No rubric errors detected in problem 2 block.
+WrightGrace.c,0,Program doesn't end if wrong password is entered (no else/return).; Did not set up branching structure based on user choice (P/R).
+ZhengEthan.c,6.25,No rubric errors detected in problem 2 block.

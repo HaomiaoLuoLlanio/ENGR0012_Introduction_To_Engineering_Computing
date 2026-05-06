@@ -1,0 +1,125 @@
+student_file,score,reason
+AdamsSimon.c,0,Did not set up branching structure based on user choice (P/R).
+AgerbakSam.c,0,Program doesn't end if wrong password is entered (no else/return).; Did not set up branching structure based on user choice (P/R).; Wrong data type used (password scanf format).
+AlbuTudor.c,0,Did not set up branching structure based on user choice (P/R).
+AltunalBerra.c,0,Did not set up branching structure based on user choice (P/R).
+BabilonGia.c,0,Did not set up branching structure based on user choice (P/R).; Content-related typo (prompt does not mention password).; Wrong data type used (scanf missing & for password).; Missing the statement for when password is incorrect.
+BaboucheLiana.c,0,Did not set up branching structure based on user choice (P/R).
+BajekJacob.c,0,Did not set up branching structure based on user choice (P/R).; Wrong data type used (scanf missing & for password).
+BarkerBrett.c,0,Did not set up branching structure based on user choice (P/R).
+BarzenAva.c,0,Did not set up branching structure based on user choice (P/R).
+BogdanskiKayla.c,0,Program doesn't end if wrong password is entered (no else/return).; Did not set up branching structure based on user choice (P/R).
+BrinkerhoffAva.c,0,Did not set up branching structure based on user choice (P/R).
+BrosiusTanner.c,0,Did not set up branching structure based on user choice (P/R).
+BunovichGeorge.c,0,Did not set up branching structure based on user choice (P/R).; Content-related typo (incorrect-password message typo).
+CastilloBetancourtIgnacio.c,0,Did not set up branching structure based on user choice (P/R).
+CengelElena.c,0,Did not ask user to enter password (missing printf/puts prompt).; Program doesn't end if wrong password is entered (no else/return).; Did not set up branching structure based on user choice (P/R).
+ChaseOwen.c,0,Did not set up branching structure based on user choice (P/R).
+ChenJonathan.c,0,Did not set up branching structure based on user choice (P/R).
+ChenVincent.c,0,Did not set up branching structure based on user choice (P/R).
+ClineffChris.c,0,Did not set up branching structure based on user choice (P/R).
+CollinsKade.c,0,Did not set up branching structure based on user choice (P/R).
+ComunaleNico.c,0,Did not set up branching structure based on user choice (P/R).
+ConwayKellen.c,0,Program doesn't end if wrong password is entered (no else/return).; Did not set up branching structure based on user choice (P/R).
+CoriglianoDerek.c,0,Program doesn't end if wrong password is entered (no else/return).; Wrong data type used (password should be int).; Wrong data type used (password scanf format).
+CottrillAliya.c,0,Did not set up branching structure based on user choice (P/R).
+CreaghLiam.c,0,Program doesn't end if wrong password is entered (no else/return).; Did not set up branching structure based on user choice (P/R).; Wrong data type used (scanf missing & for password).
+CreightonLiam.c,0,Did not set up branching structure based on user choice (P/R).; Used var not declared (password variable).; Wrong data type used (scanf missing & for password).
+DassJishnu.c,0,Did not set up branching structure based on user choice (P/R).
+DavernAiden.c,0,Did not set up branching structure based on user choice (P/R).; Content-related typo (prompt does not mention password).; Content-related typo (password prompt typo).; Wrong data type used (scanf missing & for password).
+DayoGideon.c,0,Missing one of the branches (no incorrect-password branch).; Did not set up branching structure based on user choice (P/R).
+DecterNat.c,0,Did not set up branching structure based on user choice (P/R).
+DiNataleEmanuel.c,0,Did not set up branching structure based on user choice (P/R).
+EbarbEvan.c,0,Did not set up branching structure based on user choice (P/R).
+EssnerSamuel.c,0,Program doesn't end if wrong password is entered (no else/return).; Did not set up branching structure based on user choice (P/R).
+FlahertyWinaida.c,0,Did not set up branching structure based on user choice (P/R).
+FranksJacob.c,0,Did not set up branching structure based on user choice (P/R).
+FreedNathan.c,0,Did not set up branching structure based on user choice (P/R).; Content-related typo (incorrect-password message typo).
+GawronskiDrew.c,0,Did not use a branching structure for the password check.
+GeerIsaac.c,0,Did not set up branching structure based on user choice (P/R).
+GhimireNishma.c,0,Did not set up branching structure based on user choice (P/R).
+GiandomenicoXander.c,0,Did not use a branching structure for the password check.; Content-related typo (prompt does not mention password).; Wrong data type used (scanf missing & for password).
+GillinSean.c,0,Did not set up branching structure based on user choice (P/R).; Wrong data type used (scanf missing & for password).
+GloverJack.c,0,Did not set up branching structure based on user choice (P/R).
+GourleyIsaac.c,0,Did not set up branching structure based on user choice (P/R).
+GrantCaitlin.c,0,Did not set up branching structure based on user choice (P/R).; Wrong data type used (scanf missing & for password).
+GrayOlivia.c,0,Did not set up branching structure based on user choice (P/R).; Content-related typo (prompt does not mention password).
+GrossAidan.c,0,Did not ask user to enter password (missing scanf).
+HansellPatrick.c,0,Did not ask user to enter password (missing printf/puts prompt).; Did not set up branching structure based on user choice (P/R).
+HarderMaxwell.c,0,Did not set up branching structure based on user choice (P/R).
+HarrellNirvan.c,0,Missing one of the branches (no incorrect-password branch).; Did not set up branching structure based on user choice (P/R).; Wrong data type used (password should be int).; Wrong data type used (password scanf format).
+HarrisonPatrick.c,0,Did not set up branching structure based on user choice (P/R).
+HeinemanMatthew.c,0,Missing one of the branches (no incorrect-password branch).; Did not set up branching structure based on user choice (P/R).
+HoltcampSid.c,0,Missing one of the user-choice branches (needs both P and R).
+HutjensAndrew.c,0,Did not set up branching structure based on user choice (P/R).
+IavaroneMassimo.c,0,Program doesn't end if wrong password is entered (no else/return).; Did not set up branching structure based on user choice (P/R).
+JensenFinn.c,5,Content-related typo (incorrect-password message typo).
+KalbachDante.c,0,Did not set up branching structure based on user choice (P/R).
+KlypkaDasha.c,0,Program doesn't end if wrong password is entered (no else/return).; Did not set up branching structure based on user choice (P/R).
+KostaAva.c,0,Did not set up branching structure based on user choice (P/R).
+KovacsMadison.c,0,Did not ask user to enter password (missing printf/puts prompt).; Did not set up branching structure based on user choice (P/R).; Wrong data type used (scanf missing & for password).
+KrastevNicholas.c,0,Program doesn't end if wrong password is entered (no else/return).; Did not set up branching structure based on user choice (P/R).
+KuhlMick.c,0,Did not set up branching structure based on user choice (P/R).
+KuriakoseReuben.c,0,Did not set up branching structure based on user choice (P/R).; Content-related typo (prompt does not mention password).; Wrong data type used (scanf missing & for password).; Missing the statement for when password is incorrect.
+LeahyWill.c,0,Did not set up branching structure based on user choice (P/R).
+LeopoldHenry.c,0,Did not ask user to enter password (missing printf/puts prompt).; Did not set up branching structure based on user choice (P/R).; Wrong data type used (password scanf format).
+LeskovicNiko.c,0,Did not set up branching structure based on user choice (P/R).; Wrong data type used (scanf missing & for password).
+LinBrendon.c,0,Did not set up branching structure based on user choice (P/R).; Wrong data type used (scanf missing & for password).
+MagieraXander.c,0,Did not set up branching structure based on user choice (P/R).
+MahadevanSneha.c,0,Did not set up branching structure based on user choice (P/R).
+MahaliManasVarma.c,0,Did not set up branching structure based on user choice (P/R).
+MamaneGabi.c,0,Did not set up branching structure based on user choice (P/R).
+MattoleMaddox.c,6.25,No rubric errors detected in problem 2 block.
+MazucaOlivia.c,0,Did not set up branching structure based on user choice (P/R).
+MichaelAustin.c,0,Did not set up branching structure based on user choice (P/R).
+MooreAlexander.c,0,Did not set up branching structure based on user choice (P/R).
+MooreBen.c,0,Did not set up branching structure based on user choice (P/R).
+MuchoOwen.c,0,Missing one of the branches (no incorrect-password branch).; Did not set up branching structure based on user choice (P/R).
+NebelHayden.c,0,Did not set up branching structure based on user choice (P/R).; Missing the statement for when password is incorrect.
+NgoKayla.c,0,Did not set up branching structure based on user choice (P/R).
+NiChanel.c,0,Did not set up branching structure based on user choice (P/R).; Wrong data type used (password scanf format).
+NinanRebecca.c,0,Program doesn't end if wrong password is entered (no else/return).; Did not set up branching structure based on user choice (P/R).
+NjungeJesse.c,0,Did not set up branching structure based on user choice (P/R).
+NumforScott.c,0,Did not set up branching structure based on user choice (P/R).
+OgukuBeatrice.c,0,Did not set up branching structure based on user choice (P/R).
+Ortega-BrownSantiago.c,0,Missing one of the branches (no incorrect-password branch).; Did not set up branching structure based on user choice (P/R).; Content-related typo (prompt does not mention password).; Wrong data type used (password should be int).; Wrong data type used (password scanf format).
+PanKristy.c,0,Did not set up branching structure based on user choice (P/R).
+ParkJasmine.c,0,Did not set up branching structure based on user choice (P/R).
+PeraltaLuke.c,0,Did not set up branching structure based on user choice (P/R).
+PerryZander.c,0,Did not set up branching structure based on user choice (P/R).
+PetersonLila.c,0,Did not set up branching structure based on user choice (P/R).
+PhamAaron.c,0,Did not set up branching structure based on user choice (P/R).
+PhamElise.c,0,Did not use a branching structure for the password check.; Wrong data type used (password scanf format).
+PorterBrendan.c,0,Did not set up branching structure based on user choice (P/R).
+RajkumarSriram.c,0,Did not set up branching structure based on user choice (P/R).
+RankinBrady.c,0,Did not set up branching structure based on user choice (P/R).
+RarrickConor.c,0,Did not set up branching structure based on user choice (P/R).
+RennekampConnor.c,0,Did not set up branching structure based on user choice (P/R).
+RickOwen.c,0,Did not set up branching structure based on user choice (P/R).
+RomeroEd.c,0,Did not ask user to enter password (missing printf/puts prompt).; Did not use a branching structure for the password check.; Wrong data type used (password should be int).; Wrong data type used (password scanf format).
+SarabekovaOyshabonu.c,0,Did not set up branching structure based on user choice (P/R).
+SariskyJansen.c,0,Program doesn't end if wrong password is entered (no else/return).; Did not set up branching structure based on user choice (P/R).
+SchallerKyle.c,0,Did not set up branching structure based on user choice (P/R).
+SchlaufmanMaya.c,0,Did not set up branching structure based on user choice (P/R).
+SchrollWoodJay.c,0,Did not set up branching structure based on user choice (P/R).
+ScottJake.c,0,Did not ask user to enter password (missing printf/puts prompt).; Missing one of the branches (no incorrect-password branch).; Did not set up branching structure based on user choice (P/R).; Wrong data type used (password should be int).; Wrong data type used (password scanf format).
+SeeBenjamin.c,0,Missing one of the branches (no incorrect-password branch).; Did not set up branching structure based on user choice (P/R).
+SevakAarya.c,0,Did not set up branching structure based on user choice (P/R).
+SitaramanArjun.c,0,Did not set up branching structure based on user choice (P/R).; Missing the statement for when password is incorrect.
+SmithEthan.c,0,Did not set up branching structure based on user choice (P/R).
+SteinbergJacob.c,0,Program doesn't end if wrong password is entered (no else/return).; Did not set up branching structure based on user choice (P/R).
+SterlingAmani.c,0,Did not set up branching structure based on user choice (P/R).
+StoughtonLilyanna.c,0,Did not set up branching structure based on user choice (P/R).
+SuwannachinPun.c,0,Program doesn't end if wrong password is entered (no else/return).; Did not set up branching structure based on user choice (P/R).
+TangJoy.c,0,Did not set up branching structure based on user choice (P/R).
+TaylorMichael.c,0,Did not set up branching structure based on user choice (P/R).; Wrong data type used (scanf missing & for password).
+TulettReid.c,0,Did not set up branching structure based on user choice (P/R).
+UniceKaden.c,0,Did not set up branching structure based on user choice (P/R).
+VazquezMaddy.c,0,Did not set up branching structure based on user choice (P/R).; Wrong data type used (scanf missing & for password).
+VinanskyLuke.c,0,Program doesn't end if wrong password is entered (no else/return).; Did not set up branching structure based on user choice (P/R).
+WatkinsAnthony.c,0,Did not set up branching structure based on user choice (P/R).
+WhitleyNathan.c,0,Did not set up branching structure based on user choice (P/R).
+WojdelkoBryan.c,0,Program doesn't end if wrong password is entered (no else/return).
+WongTim.c,0,Did not set up branching structure based on user choice (P/R).
+WrightGrace.c,0,Program doesn't end if wrong password is entered (no else/return).; Did not set up branching structure based on user choice (P/R).
+ZhengEthan.c,0,Did not set up branching structure based on user choice (P/R).
